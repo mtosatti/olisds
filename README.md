@@ -1,245 +1,147 @@
 # OLIS Data Solutions - Website
 
-Site moderno e responsivo para a OLIS Data Solutions, empresa especializada em consultoria e implantação de soluções de Business Intelligence.
+Site institucional da OLIS Data Solutions - Consultoria e implantação de soluções de Business Intelligence.
 
-## 🚀 Características
-
-- ✨ Design moderno e minimalista
-- 📱 Totalmente responsivo (mobile, tablet e desktop)
-- 🎨 Animações suaves e interativas
-- ⚡ Performance otimizada
-- 🔍 SEO-friendly
-- ♿ Acessível (WCAG compliant)
-- 🎯 Navegação intuitiva
-
-## 📁 Estrutura de Arquivos
+## 📁 Estrutura do Projeto
 
 ```
 olisds/
-├── index.html          # Página principal
-├── styles.css          # Estilos CSS
-├── script.js           # JavaScript para interatividade
-├── logo.svg            # Logo da empresa
-├── bruno.jpg           # Foto do Bruno (você precisa adicionar)
-├── matheus.jpg         # Foto do Matheus (você precisa adicionar)
-└── README.md           # Este arquivo
+├── README.md                    # Este arquivo
+└── site/
+    ├── scr/
+    │   ├── index.html          # Página principal do site
+    │   └── assets/             # Recursos visuais
+    │       ├── logo.svg        # Logo da empresa
+    │       ├── airflow.svg     # Ícone Apache Airflow
+    │       ├── fivetran.svg    # Ícone Fivetran
+    │       ├── mysql.svg       # Ícone MySQL
+    │       ├── postgres.svg    # Ícone PostgreSQL
+    │       ├── powerbi.svg     # Ícone Power BI
+    │       └── snowflake.svg   # Ícone Snowflake
+    ├── css/
+    │   └── styles.css          # Estilos do site
+    ├── js/
+    │   └── script.js           # JavaScript (interações, formulário, etc.)
+    ├── CONFIGURACAO_EMAIL.md   # Guia de configuração do EmailJS
+    └── README.md               # Documentação do site
 ```
 
-## 🎯 Seções do Site
+## 🚀 Funcionalidades
 
-1. **Hero Section** - Apresentação principal com call-to-action
-2. **Serviços** - Três serviços principais:
-   - Solução de Dados
-   - Modelagem
-   - Visualização
-3. **Ferramentas** - Tecnologias que utilizamos:
-   - Grid com 12 ferramentas principais (Fivetran, Looker, Snowflake, dbt, BigQuery, Tableau, Power BI, MySQL, Oracle, SQL Server, PostgreSQL, Apache Airflow)
-   - Marquee animado com logos das ferramentas
-   - Efeito hover com cores e animações
-4. **Sobre Nós** - Apresentação da equipe (Bruno e Matheus)
-5. **Contato** - Formulário e informações de contato
+### ✅ Implementadas
+- [x] Design responsivo para todos os dispositivos
+- [x] Animações suaves e efeitos visuais
+- [x] Seções: Hero, Estatísticas, Serviços, Ferramentas, Processo, Time, Contato
+- [x] Formulário de contato com EmailJS
+- [x] Proteção contra spam com Google reCAPTCHA v3
+- [x] Máscara automática no campo de telefone: (99) 99999-9999
+- [x] Ícones de LinkedIn para membros do time
+- [x] Modais para Política de Privacidade e Termos de Uso
+- [x] Navegação com scroll suave
+- [x] Menu mobile responsivo
 
-## 🛠️ Como Usar
+### 🎨 Design
+- Paleta de cores: Azul (#2563eb) e Ciano (#06b6d4)
+- Fonte principal: Inter
+- Fonte de destaque: Exo 2
+- Componentes com sombras e gradientes modernos
+- Efeitos hover interativos
 
-### Opção 1: Abrir Localmente
+## ⚙️ Configuração
 
-1. Simplesmente abra o arquivo `index.html` em um navegador moderno
-2. O site funcionará perfeitamente sem necessidade de servidor
+### 1. Abrir o Site Localmente
+Simplesmente abra o arquivo `site/scr/index.html` em um navegador web moderno.
 
-### Opção 2: Com Servidor Local (Recomendado)
+### 2. Configurar Formulário de Contato
+Para ativar o envio de emails pelo formulário, siga o guia completo em:
+**[site/CONFIGURACAO_EMAIL.md](site/CONFIGURACAO_EMAIL.md)**
 
-Para melhor experiência durante o desenvolvimento, use um servidor local:
+Resumo:
+1. Criar conta no [EmailJS](https://www.emailjs.com/) (gratuito)
+2. Criar conta no [Google reCAPTCHA](https://www.google.com/recaptcha/admin) (gratuito)
+3. Configurar as chaves em:
+   - `site/scr/index.html` (linha 22)
+   - `site/js/script.js` (linhas 178-181)
 
-#### Usando Python:
-```bash
-# Python 3
-python -m http.server 8000
+## 🔧 Customização
 
-# Ou Python 2
-python -m SimpleHTTPServer 8000
-```
+### Alterar Conteúdo
+Edite o arquivo `site/scr/index.html` para modificar:
+- Textos das seções
+- Informações dos membros do time
+- Links de redes sociais
+- Dados de contato
 
-#### Usando Node.js:
-```bash
-# Instale o http-server globalmente
-npm install -g http-server
+### Alterar Estilos
+Edite o arquivo `site/css/styles.css` para modificar:
+- Cores (variáveis CSS no `:root`)
+- Tipografia
+- Espaçamentos
+- Animações
 
-# Execute
-http-server
-```
+### Alterar Comportamentos
+Edite o arquivo `site/js/script.js` para modificar:
+- Interações
+- Validações do formulário
+- Animações JavaScript
 
-#### Usando VS Code:
-- Instale a extensão "Live Server"
-- Clique com o botão direito em `index.html`
-- Selecione "Open with Live Server"
+## 📋 Requisitos
 
-Acesse: `http://localhost:8000` (ou a porta configurada)
-
-## 📸 Adicionando Fotos da Equipe
-
-Você precisa adicionar as fotos dos membros da equipe:
-
-1. Salve a foto do **Bruno Vendruscolo** como `bruno.jpg`
-2. Salve a foto do **Matheus Tosatti** como `matheus.jpg`
-3. Coloque ambas as fotos na pasta raiz do projeto
-4. Recomendação: Use imagens quadradas de pelo menos 400x400px para melhor qualidade
-
-## 🎨 Personalização
-
-### Cores
-
-As cores principais podem ser alteradas no arquivo `styles.css` na seção `:root`:
-
-```css
-:root {
-    --primary-color: #2563eb;      /* Azul principal */
-    --primary-dark: #1e40af;       /* Azul escuro */
-    --secondary-color: #0ea5e9;    /* Azul secundário */
-    --accent-color: #06b6d4;       /* Azul claro */
-}
-```
-
-### Conteúdo
-
-Edite o arquivo `index.html` para alterar:
-- Textos e descrições
-- Links das redes sociais
-- Informações de contato
-- Conteúdo dos serviços
-
-### Logo
-
-Para substituir o logo:
-- Substitua o arquivo `logo.svg` pelo seu logo
-- Ou edite o arquivo SVG existente com as cores e formas desejadas
-
-## 📧 Configuração do Formulário de Contato
-
-O formulário de contato atualmente exibe apenas uma mensagem de sucesso. Para integrá-lo com um backend:
-
-### Opção 1: Usando FormSpree (Grátis e Fácil)
-
-1. Acesse [formspree.io](https://formspree.io)
-2. Crie uma conta gratuita
-3. Crie um novo formulário
-4. Substitua no `script.js`:
-
-```javascript
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(contactForm);
-
-    try {
-        const response = await fetch('https://formspree.io/f/SEU_ID_AQUI', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            showNotification('Mensagem enviada com sucesso!', 'success');
-            contactForm.reset();
-        }
-    } catch (error) {
-        showNotification('Erro ao enviar mensagem. Tente novamente.', 'error');
-    }
-});
-```
-
-### Opção 2: Integração com Backend Próprio
-
-Se você tiver um servidor backend, modifique a URL no código acima para apontar para sua API.
+- Navegador moderno (Chrome, Firefox, Safari, Edge)
+- JavaScript habilitado
+- Conexão com internet (para fontes Google e bibliotecas CDN)
 
 ## 🌐 Deploy
 
-### GitHub Pages (Grátis)
+### Hospedagem Estática
+Este é um site estático puro (HTML, CSS, JS). Pode ser hospedado em:
+- **GitHub Pages** (gratuito)
+- **Netlify** (gratuito)
+- **Vercel** (gratuito)
+- **AWS S3** + CloudFront
+- Qualquer servidor web tradicional
 
-1. Crie um repositório no GitHub
-2. Faça upload dos arquivos
-3. Vá em Settings > Pages
-4. Selecione a branch main
-5. Seu site estará em `https://seu-usuario.github.io/nome-do-repositorio`
+### Passos para Deploy:
+1. Faça upload da pasta `site` completa para o servidor
+2. Configure o domínio `olisds.tech` para apontar para o servidor
+3. Atualize as chaves do EmailJS e reCAPTCHA com o domínio de produção
+4. Teste o formulário de contato
 
-### Netlify (Grátis - Recomendado)
+## 🔒 Segurança
 
-1. Acesse [netlify.com](https://netlify.com)
-2. Arraste a pasta do projeto para o site
-3. Pronto! Seu site estará online
+- **reCAPTCHA v3**: Proteção invisível contra bots e spam
+- **HTTPS**: Recomendado para produção
+- **Validação**: Campos do formulário validados no frontend
+- **Rate Limiting**: EmailJS limita envios (200/mês no plano gratuito)
 
-### Vercel (Grátis)
+## 📱 Responsividade
 
-1. Instale o Vercel CLI: `npm i -g vercel`
-2. Na pasta do projeto: `vercel`
-3. Siga as instruções
+O site é totalmente responsivo e testado em:
+- Desktop (1920px+)
+- Laptop (1024px - 1919px)
+- Tablet (768px - 1023px)
+- Mobile (320px - 767px)
 
-## 📱 Redes Sociais
+## 🛠️ Tecnologias Utilizadas
 
-Atualize os links das redes sociais no arquivo `index.html`:
+- **HTML5**: Estrutura semântica
+- **CSS3**: Estilos modernos com Flexbox e Grid
+- **JavaScript (ES6+)**: Interatividade e validações
+- **EmailJS**: Serviço de envio de emails
+- **Google reCAPTCHA v3**: Proteção contra spam
+- **Google Fonts**: Fontes Inter e Exo 2
+- **SVG**: Ícones e animações vetoriais
 
-```html
-<a href="https://linkedin.com/company/sua-empresa" target="_blank">
-<a href="https://instagram.com/sua-empresa" target="_blank">
-```
+## 📞 Contato
 
-## ✅ Checklist de Lançamento
-
-Antes de colocar o site no ar, verifique:
-
-- [ ] Adicionar fotos da equipe (bruno.jpg e matheus.jpg)
-- [ ] Atualizar links das redes sociais
-- [ ] Configurar formulário de contato
-- [ ] Testar em diferentes navegadores
-- [ ] Testar em diferentes dispositivos (mobile, tablet, desktop)
-- [ ] Verificar todos os links
-- [ ] Otimizar imagens para web
-- [ ] Adicionar favicon
-- [ ] Configurar Google Analytics (opcional)
-- [ ] Testar performance com Lighthouse
-
-## 🔧 Tecnologias Utilizadas
-
-- HTML5 semântico
-- CSS3 (Grid, Flexbox, Animations)
-- JavaScript (Vanilla - sem frameworks)
-- Google Fonts (Inter)
-- SVG para gráficos vetoriais
-
-## 📊 Performance
-
-O site foi otimizado para:
-- Carregamento rápido
-- SEO
-- Acessibilidade
-- Mobile-first
-- Animações performáticas
-
-## 🐛 Problemas Comuns
-
-### Imagens não aparecem
-- Verifique se os nomes dos arquivos estão corretos (bruno.jpg, matheus.jpg)
-- Verifique se as imagens estão na pasta raiz
-
-### Fontes não carregam
-- Certifique-se de ter conexão com internet (Google Fonts)
-- Ou baixe a fonte Inter e use localmente
-
-### Menu mobile não funciona
-- Verifique se o JavaScript está carregando corretamente
-- Abra o console do navegador (F12) para ver erros
-
-## 📞 Suporte
-
-Para dúvidas ou sugestões sobre o site:
-- Email: comercial@olisds.tech
-- Localização: São Paulo - SP - Brasil
+- **Email**: comercial@olisds.tech
+- **LinkedIn**: [OLIS Data Solutions](https://linkedin.com)
+- **Website**: olisds.tech
 
 ## 📄 Licença
 
-Este site foi desenvolvido para OLIS Data Solutions.
+© 2024 OLIS Data Solutions. Todos os direitos reservados.
 
 ---
 
-Desenvolvido com ❤️ para transformar dados em decisões estratégicas.
+**Desenvolvido com ❤️ por OLIS Data Solutions**

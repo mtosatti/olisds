@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="OLIS Data Solutions - Consultoria e implantação de soluções de BI. Organize e estruture seus dados para tomar as melhores decisões.">
+    <meta name="keywords" content="BI, Business Intelligence, Dados, Analytics, Consultoria, Data Solutions">
+    <title>OLIS Data Solutions - Transformando Dados em Decisões</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Exo+2:wght@700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Google reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=YOUR_RECAPTCHA_SITE_KEY"></script>
+</head>
+
+<body>
+    <!-- Header/Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <img src="assets/logo.svg" alt="OLIS Data Solutions" class="logo-img">
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#services" class="nav__link">Serviços</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#tools" class="nav__link">Ferramentas</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">Sobre Nós</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">Contato</a>
+                    </li>
+                </ul>
+                <div class="nav__close" id="nav-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero__container container">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    Transformando <span class="gradient-text">Dados</span> em <span
+                        class="gradient-text">Decisões</span> Estratégicas
+                </h1>
+                <p class="hero__description">
+                    Na OLIS, nosso compromisso vai além de processar dados. Desenvolvemos indicadores precisos e
+                    relevantes que se tornam a base para decisões estratégicas confiáveis. Cada métrica que construímos
+                    é desenhada para gerar insights acionáveis, permitindo que sua empresa tome decisões fundamentadas
+                    em informação estruturada e não em suposições.
+                </p>
+                <p class="hero__description">
+                    Acreditamos que indicadores bem elaborados transformam a forma como você enxerga seu negócio,
+                    reduzem riscos e maximizam oportunidades. Do dado bruto ao dashboard estratégico, garantimos que
+                    cada etapa agregue valor ao seu processo decisório.
+                </p>
+                <div class="hero__buttons">
+                    <a href="#contact" class="btn btn-primary">Fale Conosco</a>
+                    <a href="#services" class="btn btn-outline">Nossos Serviços</a>
+                </div>
+            </div>
+            <div class="hero__image">
+                <div class="hero__animation">
+                    <svg class="cycle-animation" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Outer hexagon ring - rotating clockwise -->
+                        <g class="hex-ring hex-ring-outer">
+                            <polygon points="250,50 350,112.5 350,237.5 250,300 150,237.5 150,112.5"
+                                class="hex hex-1" />
+                        </g>
+
+                        <!-- Middle hexagon ring - rotating counter-clockwise -->
+                        <g class="hex-ring hex-ring-middle">
+                            <polygon points="250,100 320,143.75 320,231.25 250,275 180,231.25 180,143.75"
+                                class="hex hex-2" />
+                        </g>
+
+                        <!-- Inner hexagon ring - rotating clockwise -->
+                        <g class="hex-ring hex-ring-inner">
+                            <polygon points="250,150 290,175 290,225 250,250 210,225 210,175" class="hex hex-3" />
+                        </g>
+
+                        <!-- Central pulsing hexagon -->
+                        <g class="hex-ring hex-ring-center">
+                            <polygon points="250,175 275,193.75 275,231.25 250,250 225,231.25 225,193.75"
+                                class="hex hex-center" />
+                        </g>
+
+                        <!-- Data flow particles -->
+                        <circle class="particle particle-1" r="4" />
+                        <circle class="particle particle-2" r="3" />
+                        <circle class="particle particle-3" r="4" />
+                        <circle class="particle particle-4" r="3" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#services" class="scroll-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats__container container">
+            <div class="stats__grid">
+                <div class="stat__item">
+                    <h3 class="stat__number">28+</h3>
+                    <p class="stat__label">Anos de Experiência Combinados</p>
+                </div>                
+                <div class="stat__item">
+                    <h3 class="stat__number">15+</h3>
+                    <p class="stat__label">Tecnologias Dominadas</p>
+                </div>
+                <div class="stat__item">
+                    <h3 class="stat__number">100%</h3>
+                    <p class="stat__label">Foco em Resultados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services__container container">
+            <div class="section__header">
+                <h2 class="section__title">Nossos Serviços</h2>
+                <p class="section__subtitle">Soluções completas em Business Intelligence e Analytics</p>
+            </div>
+            <div class="services__grid">
+                <!-- Service 1 -->
+                <div class="service__card">
+                    <div class="service__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                        </svg>
+                    </div>
+                    <h3 class="service__title">Solução de Dados</h3>
+                    <p class="service__description">
+                        Avaliamos seus sistemas e plataformas atuais, recomendando e implementando uma infraestrutura de
+                        dados sob medida, totalmente alinhada às suas necessidades de negócio.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service__card">
+                    <div class="service__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="service__title">Modelagem</h3>
+                    <p class="service__description">
+                        Transformamos suas regras de negócio em produtos de dados confiáveis, utilizando técnicas de
+                        modelagem escaláveis, práticas e fáceis de entender.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service__card">
+                    <div class="service__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3 class="service__title">Visualização</h3>
+                    <p class="service__description">
+                        Seus dashboards e relatórios devem ser ferramentas de impacto! Cuidamos de todo o processo – do
+                        design à construção – para garantir que a visualização de dados inspire decisões estratégicas e
+                        gere resultados.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service__card">
+                    <div class="service__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="service__title">Documentação</h3>
+                    <p class="service__description">
+                        Criamos documentação técnica completa e acessível para suas soluções de dados. Desde dicionários
+                        de dados até guias de uso de dashboards, garantimos que sua equipe tenha conhecimento
+                        estruturado para maximizar o valor dos insights gerados.
+                    </p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service__card">
+                    <div class="service__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="service__title">Automação de Processos</h3>
+                    <p class="service__description">
+                        Desenvolvemos pipelines automatizados de ETL/ELT que otimizam a coleta, transformação e
+                        distribuição de dados. Reduzimos o trabalho manual e aumentamos a confiabilidade através de
+                        orquestração inteligente e monitoramento contínuo.
+                    </p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service__card">
+                    <div class="service__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 20h9"></path>
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service__title">Consultoria Estratégica</h3>
+                    <p class="service__description">
+                        Oferecemos orientação especializada para definir sua estratégia de dados e analytics. Ajudamos
+                        na seleção de ferramentas, arquitetura de soluções e roadmap de implementação, alinhando
+                        tecnologia com objetivos de negócio.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools" id="tools">
+        <div class="tools__container container">
+            <div class="section__header">
+                <h2 class="section__title">Nossas Ferramentas</h2>
+                <p class="section__subtitle">Trabalhamos com as principais tecnologias do mercado de dados e analytics
+                </p>
+                <p class="section__description">
+                    Estas são algumas das diversas ferramentas que nossa equipe domina para construir soluções completas
+                    de dados. Da ingestão à visualização, selecionamos as tecnologias mais adequadas para cada desafio,
+                    garantindo escalabilidade, performance e facilidade de manutenção em todos os projetos.
+                </p>
+            </div>
+
+            <!-- Tools Grid -->
+            <div class="tools__grid">
+                <div class="tool__item">
+                    <img src="assets/fivetran.svg" alt="Fivetran" class="tool__logo">
+                    <p class="tool__name">Fivetran</p>
+                </div>
+                <div class="tool__item">
+                    <img src="https://cdn.worldvectorlogo.com/logos/looker.svg" alt="Looker" class="tool__logo">
+                    <p class="tool__name">Looker</p>
+                </div>
+                <div class="tool__item">
+                    <img src="assets/snowflake.svg" alt="Snowflake" class="tool__logo">
+                    <p class="tool__name">Snowflake</p>
+                </div>
+                <div class="tool__item">
+                    <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" alt="dbt"
+                        class="tool__logo">
+                    <p class="tool__name">dbt</p>
+                </div>
+                <div class="tool__item">
+                    <img src="https://cdn.worldvectorlogo.com/logos/google-bigquery-logo-1.svg" alt="BigQuery"
+                        class="tool__logo">
+                    <p class="tool__name">BigQuery</p>
+                </div>
+                <div class="tool__item">
+                    <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau"
+                        class="tool__logo">
+                    <p class="tool__name">Tableau</p>
+                </div>
+                <div class="tool__item">
+                    <img src="assets/powerbi.svg" alt="Power BI" class="tool__logo">
+                    <p class="tool__name">Power BI</p>
+                </div>
+                <div class="tool__item">
+                    <img src="assets/mysql.svg" alt="MySQL" class="tool__logo">
+                    <p class="tool__name">MySQL</p>
+                </div>
+                <div class="tool__item">
+                    <img src="https://cdn.worldvectorlogo.com/logos/oracle-6.svg" alt="Oracle" class="tool__logo">
+                    <p class="tool__name">Oracle</p>
+                </div>
+                <div class="tool__item">
+                    <img src="https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg" alt="SQL Server"
+                        class="tool__logo">
+                    <p class="tool__name">SQL Server</p>
+                </div>
+                <div class="tool__item">
+                    <img src="assets/postgres.svg" alt="PostgreSQL" class="tool__logo">
+                    <p class="tool__name">PostgreSQL</p>
+                </div>
+                <div class="tool__item">
+                    <img src="assets/airflow.svg" alt="Apache Airflow" class="tool__logo">
+                    <p class="tool__name">Apache Airflow</p>
+                </div>
+            </div>
+
+            <!-- Marquee Section -->
+            <div class="tools__marquee">
+                <div class="marquee">
+                    <div class="marquee__content">
+                        <img src="assets/fivetran.svg" alt="Fivetran">
+                        <img src="https://cdn.worldvectorlogo.com/logos/looker.svg" alt="Looker">
+                        <img src="assets/snowflake.svg" alt="Snowflake">
+                        <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" alt="dbt">
+                        <img src="https://cdn.worldvectorlogo.com/logos/google-bigquery-logo-1.svg" alt="BigQuery">
+                        <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau">
+                        <img src="assets/powerbi.svg" alt="Power BI">
+                        <img src="assets/mysql.svg" alt="MySQL">
+                        <img src="https://cdn.worldvectorlogo.com/logos/oracle-6.svg" alt="Oracle">
+                        <img src="https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg" alt="SQL Server">
+                        <img src="assets/postgres.svg" alt="PostgreSQL">
+                        <img src="assets/airflow.svg" alt="Apache Airflow">
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="marquee__content" aria-hidden="true">
+                        <img src="assets/fivetran.svg" alt="Fivetran">
+                        <img src="https://cdn.worldvectorlogo.com/logos/looker.svg" alt="Looker">
+                        <img src="assets/snowflake.svg" alt="Snowflake">
+                        <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" alt="dbt">
+                        <img src="https://cdn.worldvectorlogo.com/logos/google-bigquery-logo-1.svg" alt="BigQuery">
+                        <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau">
+                        <img src="assets/powerbi.svg" alt="Power BI">
+                        <img src="assets/mysql.svg" alt="MySQL">
+                        <img src="https://cdn.worldvectorlogo.com/logos/oracle-6.svg" alt="Oracle">
+                        <img src="https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg" alt="SQL Server">
+                        <img src="assets/postgres.svg" alt="PostgreSQL">
+                        <img src="assets/airflow.svg" alt="Apache Airflow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="process__container container">
+            <div class="section__header">
+                <h2 class="section__title">Como Trabalhamos</h2>
+                <p class="section__subtitle">Nossa metodologia comprovada em 4 etapas para transformar seus dados em
+                    vantagem competitiva</p>
+            </div>
+            <div class="process__grid">
+                <div class="process__step">
+                    <div class="step__number">1</div>
+                    <h3 class="step__title">Diagnóstico</h3>
+                    <p class="step__description">
+                        Realizamos uma análise profunda do seu cenário atual de dados, identificando desafios,
+                        oportunidades e necessidades específicas do negócio.
+                    </p>
+                </div>
+                <div class="process__step">
+                    <div class="step__number">2</div>
+                    <h3 class="step__title">Planejamento</h3>
+                    <p class="step__description">
+                        Definimos arquitetura, tecnologias e roadmap detalhado, alinhando expectativas e garantindo que
+                        a solução atenda seus objetivos estratégicos.
+                    </p>
+                </div>
+                <div class="process__step">
+                    <div class="step__number">3</div>
+                    <h3 class="step__title">Implementação</h3>
+                    <p class="step__description">
+                        Executamos a construção da solução com metodologia ágil, entregas incrementais e comunicação
+                        constante para ajustes em tempo real.
+                    </p>
+                </div>
+                <div class="process__step">
+                    <div class="step__number">4</div>
+                    <h3 class="step__title">Capacitação</h3>
+                    <p class="step__description">
+                        Treinamos sua equipe, entregamos documentação completa e garantimos autonomia para que você
+                        extraia o máximo valor da solução.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="cta__container container">
+            <h2 class="cta__title">Pronto para transformar seus dados em decisões estratégicas?</h2>
+            <p class="cta__description">Agende uma consulta gratuita de 30 minutos com nossos especialistas e descubra
+                como podemos ajudar sua empresa.</p>
+            <a href="#contact" class="btn btn-primary btn-large">Agendar Consulta Gratuita</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about__container container">
+            <div class="section__header">
+                <h2 class="section__title">Conheça o Nosso Time</h2>
+                <p class="section__subtitle">Especialistas em Dados & Analytics com anos de experiência</p>
+            </div>
+            <div class="team__grid">
+                <!-- Team Member 1 -->
+                <div class="team__card">
+                    <h3 class="team__name">Bruno Vendruscolo</h3>
+                    <p class="team__role">Data Engineer</p>
+                    <div class="team__expertise">
+                        <p class="expertise__text">
+                            Com mais de 8 anos de experiência em startups e consultoria internacional, Bruno é
+                            especialista em Modern Data Stack, dominando ferramentas como Fivetran, dbt, Snowflake e
+                            Looker. Sua expertise abrange desde a arquitetura e implementação de infraestrutura de dados
+                            escalável até o desenvolvimento completo de produtos de dados end-to-end. Bruno se destaca
+                            na modelagem dimensional e otimização de performance em data warehouses, além da implantação
+                            de pipelines de ETL/ELT automatizados, sempre criando soluções eficientes alinhadas às
+                            necessidades de negócio.
+                        </p>
+                    </div>
+                    <a href="https://www.linkedin.com/in/bruno-vendruscolo/" target="_blank" class="team__linkedin" aria-label="LinkedIn de Bruno Vendruscolo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team__card">
+                    <h3 class="team__name">Matheus Tosatti</h3>
+                    <p class="team__role">Business Intelligence Analyst</p>
+                    <div class="team__expertise">
+                        <p class="expertise__text">
+                            Com mais de 6 anos participando de projetos de BI, Matheus é especialista
+                            em Power BI e outras ferramentas de visualização empresarial. Sua vasta experiência
+                            inclui a estruturação de soluções de dados para problemas complexos de negócio, governança
+                            de dados e definição de políticas de qualidade. Possui conhecimento na
+                            integração de múltiplas fontes de dados como SQL Server, Oracle, PostgreSQL e MySQL.
+                        </p>
+                    </div>
+                    <a href="https://www.linkedin.com/in/matheus-santos-tosatti-24a3078a/" target="_blank" class="team__linkedin" aria-label="LinkedIn de Matheus Tosatti">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact__container container">
+            <div class="contact__content">
+                <div class="contact__info">
+                    <h2 class="section__title">Entre em Contato</h2>
+                    <p class="contact__text">
+                        Estamos prontos para ajudar sua empresa a transformar dados em insights estratégicos. Entre em
+                        contato conosco!
+                    </p>
+                    <div class="contact__details">
+                        <div class="contact__item">
+                            <div class="contact__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:comercial@olisds.tech">comercial@olisds.tech</a>
+                            </div>
+                        </div>
+                        <div class="contact__item">
+                            <div class="contact__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Localização</h4>
+                                <p>São Paulo - SP - Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social__links">
+                        <a href="https://linkedin.com" target="_blank" class="social__link" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="social__link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact__form-wrapper">
+                    <form class="contact__form" id="contact-form">
+                        <div class="form__group">
+                            <input type="text" name="user_name" class="form__input" placeholder="Nome completo" required>
+                        </div>
+                        <div class="form__group">
+                            <input type="email" name="user_email" class="form__input" placeholder="E-mail" required>
+                        </div>
+                        <div class="form__group">
+                            <input type="tel" name="user_phone" class="form__input" placeholder="Telefone (11) 99999-9999">
+                        </div>
+                        <div class="form__group">
+                            <textarea name="message" class="form__input form__textarea" placeholder="Mensagem" rows="5"
+                                required></textarea>
+                        </div>
+                        <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
+                        <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <img src="assets/logo.svg" alt="OLIS Data Solutions" class="footer__logo">
+                    <p class="footer__text">
+                        Transformando dados em decisões estratégicas com soluções de BI personalizadas.
+                    </p>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Para Clientes</h4>
+                    <ul class="footer__links">
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#about">Sobre Nós</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Para Parceiros</h4>
+                    <ul class="footer__links">
+                        <li><a href="#">Parcerias</a></li>
+                        <li><a href="#">Oportunidades</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Legal</h4>
+                    <ul class="footer__links">
+                        <li><a href="#" id="terms-link">Termos e Condições</a></li>
+                        <li><a href="#" id="privacy-link">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 OLIS Data Solutions. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== Privacy Policy Modal ===== -->
+    <div class="modal-overlay" id="privacy-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="privacy-modal-close">&times;</button>
+            <h3>Política de Privacidade</h3>
+            <div class="modal-body">
+                <p><strong>Última atualização:</strong> 20 de novembro de 2025</p>
+                <p>A OLIS Data Solutions ("nós", "nosso") opera o site olisds.tech (o "Serviço"). Esta página informa
+                    sobre nossas políticas relativas à coleta, uso e divulgação de dados pessoais quando você utiliza
+                    nosso Serviço.</p>
+
+                <h4>1. Coleta e Uso de Dados</h4>
+                <p>Coletamos diferentes tipos de informações para várias finalidades, a fim de fornecer e melhorar nosso
+                    Serviço para você.</p>
+                <ul>
+                    <li><strong>Dados Pessoais:</strong> Ao usar nosso formulário de contato, podemos solicitar que você
+                        nos forneça informações de identificação pessoal, como nome, endereço de e-mail e número de
+                        telefone.</li>
+                    <li><strong>Dados de Uso:</strong> Podemos coletar informações sobre como o Serviço é acessado e
+                        usado ("Dados de Uso"). Estes Dados de Uso podem incluir informações como o endereço de
+                        Protocolo de Internet do seu computador (endereço IP), tipo de navegador, versão do navegador,
+                        as páginas do nosso Serviço que você visita, a hora e a data da sua visita, o tempo gasto nessas
+                        páginas e outros dados de diagnóstico.</li>
+                </ul>
+
+                <h4>2. Uso dos Dados</h4>
+                <p>A OLIS Data Solutions utiliza os dados coletados para diversos fins:</p>
+                <ul>
+                    <li>Para fornecer e manter nosso Serviço;</li>
+                    <li>Para notificá-lo sobre alterações em nosso Serviço;</li>
+                    <li>Para fornecer suporte ao cliente;</li>
+                    <li>Para coletar análises ou informações valiosas para que possamos melhorar nosso Serviço;</li>
+                    <li>Para monitorar o uso do nosso Serviço;</li>
+                    <li>Para detectar, prevenir e resolver problemas técnicos.</li>
+                </ul>
+
+                <h4>3. Segurança dos Dados</h4>
+                <p>A segurança dos seus dados é importante para nós, mas lembre-se que nenhum método de transmissão pela
+                    Internet ou método de armazenamento eletrônico é 100% seguro. Embora nos esforcemos para usar meios
+                    comercialmente aceitáveis para proteger seus Dados Pessoais, não podemos garantir sua segurança
+                    absoluta.</p>
+
+                <h4>4. Cookies</h4>
+                <p>Utilizamos cookies e tecnologias de rastreamento semelhantes para rastrear a atividade em nosso
+                    Serviço e manter certas informações. Cookies são arquivos com uma pequena quantidade de dados que
+                    podem incluir um identificador exclusivo anônimo. Você pode instruir seu navegador a recusar todos
+                    os cookies ou a indicar quando um cookie está sendo enviado.</p>
+
+                <h4>5. Seus Direitos</h4>
+                <p>Você tem o direito de acessar, atualizar ou excluir as informações que temos sobre você. Sempre que
+                    possível, você pode acessar, atualizar ou solicitar a exclusão de seus Dados Pessoais entrando em
+                    contato conosco.</p>
+
+                <h4>6. Alterações a Esta Política de Privacidade</h4>
+                <p>Podemos atualizar nossa Política de Privacidade de tempos em tempos. Notificaremos você sobre
+                    quaisquer alterações, publicando a nova Política de Privacidade nesta página.</p>
+
+                <h4>7. Contato</h4>
+                <p>Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco pelo e-mail:
+                    <a href="mailto:comercial@olisds.tech">comercial@olisds.tech</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Terms and Conditions Modal ===== -->
+    <div class="modal-overlay" id="terms-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="terms-modal-close">&times;</button>
+            <h3>Termos e Condições</h3>
+            <div class="modal-body">
+                <p><strong>Última atualização:</strong> 20 de novembro de 2025</p>
+                <p>Bem-vindo à OLIS Data Solutions! Estes termos e condições descrevem as regras e regulamentos para o uso do site da OLIS Data Solutions, localizado em olisds.tech.</p>
+
+                <h4>1. Aceitação dos Termos</h4>
+                <p>Ao acessar este site, presumimos que você aceita estes termos e condições. Não continue a usar o site da OLIS Data Solutions se não concordar com todos os termos e condições declarados nesta página.</p>
+
+                <h4>2. Licença de Uso</h4>
+                <p>Salvo indicação em contrário, a OLIS Data Solutions e/ou seus licenciadores detêm os direitos de propriedade intelectual de todo o material no site. Todos os direitos de propriedade intelectual são reservados. Você pode acessar este material para seu uso pessoal, sujeito às restrições estabelecidas nestes termos e condições.</p>
+                <p>Você não deve:</p>
+                <ul>
+                    <li>Republicar material do site da OLIS Data Solutions</li>
+                    <li>Vender, alugar ou sublicenciar material do site da OLIS Data Solutions</li>
+                    <li>Reproduzir, duplicar ou copiar material do site da OLIS Data Solutions</li>
+                    <li>Redistribuir conteúdo da OLIS Data Solutions</li>
+                </ul>
+
+                <h4>3. Isenção de Responsabilidade</h4>
+                <p>As informações fornecidas pela OLIS Data Solutions em nosso site são apenas para fins informativos gerais. Todo o conteúdo do site é fornecido de boa fé, no entanto, não fazemos nenhuma representação ou garantia de qualquer tipo, expressa ou implícita, quanto à precisão, adequação, validade, confiabilidade, disponibilidade ou integridade de qualquer informação no site.</p>
+                <p>Sob nenhuma circunstância teremos qualquer responsabilidade perante você por qualquer perda ou dano de qualquer tipo incorrido como resultado do uso do site ou da confiança em qualquer informação fornecida no site. O seu uso do site e a sua confiança em qualquer informação contida nele são exclusivamente por sua conta e risco.</p>
+
+                <h4>4. Links para Outros Sites</h4>
+                <p>Nosso Serviço pode conter links para sites de terceiros ou serviços que não são de propriedade ou controlados pela OLIS Data Solutions. Não temos controle e não assumimos responsabilidade pelo conteúdo, políticas de privacidade ou práticas de quaisquer sites ou serviços de terceiros.</p>
+
+                <h4>5. Alterações nos Termos</h4>
+                <p>Reservamo-nos o direito, a nosso exclusivo critério, de modificar ou substituir estes Termos a qualquer momento. Se uma revisão for material, tentaremos fornecer um aviso com pelo menos 30 dias de antecedência antes que quaisquer novos termos entrem em vigor.</p>
+
+                <h4>6. Contato</h4>
+                <p>Se você tiver alguma dúvida sobre estes Termos, entre em contato conosco pelo e-mail: <a href="mailto:comercial@olisds.tech">comercial@olisds.tech</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

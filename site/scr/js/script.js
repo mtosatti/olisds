@@ -128,28 +128,113 @@ if (marquee) {
     }, 100);
 }
 
-// ===== Contact Form Handling =====
+// ===== Phone Mask =====
+const phoneInput = document.querySelector('input[name="user_phone"]');
+
+if (phoneInput) {
+    phoneInput.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é dígito
+
+        // Limita a 11 dígitos
+        value = value.substring(0, 11);
+
+        // Aplica a máscara (999) 99999-9999
+        if (value.length > 0) {
+            if (value.length <= 2) {
+                value = `(${value}`;
+            } else if (value.length <= 7) {
+                value = `(${value.substring(0, 2)}) ${value.substring(2)}`;
+            } else {
+                value = `(${value.substring(0, 2)}) ${value.substring(2, 7)}-${value.substring(7)}`;
+            }
+        }
+
+        e.target.value = value;
+    });
+
+    // Previne colagem de texto não numérico
+    phoneInput.addEventListener('paste', (e) => {
+        setTimeout(() => {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.substring(0, 11);
+
+            if (value.length > 0) {
+                if (value.length <= 2) {
+                    value = `(${value}`;
+                } else if (value.length <= 7) {
+                    value = `(${value.substring(0, 2)}) ${value.substring(2)}`;
+                } else {
+                    value = `(${value.substring(0, 2)}) ${value.substring(2, 7)}-${value.substring(7)}`;
+                }
+            }
+
+            e.target.value = value;
+        }, 10);
+    });
+}
+
+// ===== EmailJS Configuration =====
+// IMPORTANTE: Substitua estes valores pelas suas próprias chaves do EmailJS e reCAPTCHA
+const EMAILJS_PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY'; // Obtenha em: https://dashboard.emailjs.com/admin/account
+const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Obtenha em: https://dashboard.emailjs.com/admin
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Obtenha em: https://dashboard.emailjs.com/admin/templates
+const RECAPTCHA_SITE_KEY = 'YOUR_RECAPTCHA_SITE_KEY'; // Obtenha em: https://www.google.com/recaptcha/admin
+
+// Inicializar EmailJS
+(function() {
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
+})();
+
+// ===== Contact Form Handling with reCAPTCHA =====
 const contactForm = document.getElementById('contact-form');
+const submitBtn = document.getElementById('submit-btn');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = {};
-        formData.forEach((value, key) => {
-            data[key] = value;
-        });
+        // Verificar se EmailJS está carregado
+        if (typeof emailjs === 'undefined') {
+            showNotification('Erro ao carregar o serviço de email. Por favor, tente novamente.', 'error');
+            return;
+        }
 
-        // Show success message
-        showNotification('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
+        // Desabilitar botão durante envio
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
 
-        // Reset form
-        contactForm.reset();
+        try {
+            // Executar reCAPTCHA v3
+            if (typeof grecaptcha !== 'undefined') {
+                const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'submit' });
+                document.getElementById('recaptchaResponse').value = token;
+            }
 
-        // In a real implementation, you would send this data to a server
-        // Example: fetch('/api/contact', { method: 'POST', body: JSON.stringify(data) })
+            // Enviar email via EmailJS
+            const result = await emailjs.sendForm(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                contactForm
+            );
+
+            console.log('Email enviado com sucesso:', result);
+
+            // Mostrar mensagem de sucesso
+            showNotification('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
+
+            // Limpar formulário
+            contactForm.reset();
+
+        } catch (error) {
+            console.error('Erro ao enviar email:', error);
+            showNotification('Erro ao enviar mensagem. Por favor, tente novamente ou entre em contato por email.', 'error');
+        } finally {
+            // Reabilitar botão
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Enviar Mensagem';
+        }
     });
 }
 
@@ -172,11 +257,12 @@ function showNotification(message, type = 'info') {
     `;
 
     // Add styles
+    const bgColor = type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#2563eb';
     notification.style.cssText = `
         position: fixed;
         top: 100px;
         right: 20px;
-        background: ${type === 'success' ? '#10b981' : '#2563eb'};
+        background: ${bgColor};
         color: white;
         padding: 1rem 1.5rem;
         border-radius: 0.5rem;
@@ -449,5 +535,37 @@ if (privacyLink && privacyModal && privacyModalClose) {
     });
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && privacyModal.classList.contains('active')) closeModal();
+    });
+}
+
+// ===== Terms and Conditions Modal =====
+const termsModal = document.getElementById('terms-modal');
+const termsLink = document.getElementById('terms-link');
+const termsModalClose = document.getElementById('terms-modal-close');
+
+if (termsLink && termsModal && termsModalClose) {
+    // Function to open the modal
+    const openModal = () => {
+        termsModal.classList.add('active');
+    };
+
+    // Function to close the modal
+    const closeModal = () => {
+        termsModal.classList.remove('active');
+    };
+
+    // Open modal on link click
+    termsLink.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default link behavior
+        openModal();
+    });
+
+    // Close modal on button click, overlay click, or ESC key
+    termsModalClose.addEventListener('click', closeModal);
+    termsModal.addEventListener('click', (e) => {
+        if (e.target === termsModal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && termsModal.classList.contains('active')) closeModal();
     });
 }

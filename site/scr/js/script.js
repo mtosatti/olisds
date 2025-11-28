@@ -175,10 +175,10 @@ if (phoneInput) {
 
 // ===== EmailJS Configuration =====
 // IMPORTANTE: Substitua estes valores pelas suas próprias chaves do EmailJS e reCAPTCHA
-const EMAILJS_PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY'; // Obtenha em: https://dashboard.emailjs.com/admin/account
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Obtenha em: https://dashboard.emailjs.com/admin
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Obtenha em: https://dashboard.emailjs.com/admin/templates
-const RECAPTCHA_SITE_KEY = 'YOUR_RECAPTCHA_SITE_KEY'; // Obtenha em: https://www.google.com/recaptcha/admin
+const EMAILJS_PUBLIC_KEY = '7PPKJkRh8K7tywhhx'; // Obtenha em: https://dashboard.emailjs.com/admin/account
+const EMAILJS_SERVICE_ID = 'service_vhx2lv7'; // Obtenha em: https://dashboard.emailjs.com/admin
+const EMAILJS_TEMPLATE_ID = 'template_zdeyoc7'; // Obtenha em: https://dashboard.emailjs.com/admin/templates
+const RECAPTCHA_SITE_KEY = '6LfdfBosAAAAADfdISGlkIvKfUQKBq1_dZjaOo4e'; // Obtenha em: https://www.google.com/recaptcha/admin
 
 // Inicializar EmailJS
 (function() {

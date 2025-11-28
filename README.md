@@ -134,9 +134,9 @@ O site é totalmente responsivo e testado em:
 
 ## 📞 Contato
 
-- **Email**: comercial@olisds.tech
+- **Email**: comercial@olisds.com.br
 - **LinkedIn**: [OLIS Data Solutions](https://linkedin.com)
-- **Website**: olisds.tech
+- **Website**: olisds.com.br
 
 ## 📄 Licença
 

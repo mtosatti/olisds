@@ -506,6 +506,25 @@ if (statsSection) {
     statsObserver.observe(statsSection);
 }
 
+// ===== FAQ Accordion =====
+const faqItems = document.querySelectorAll('.faq__item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq__question');
+
+    question.addEventListener('click', () => {
+        // Close all other items
+        faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+                otherItem.classList.remove('active');
+            }
+        });
+
+        // Toggle current item
+        item.classList.toggle('active');
+    });
+});
+
 // ===== Privacy Policy Modal =====
 const privacyModal = document.getElementById('privacy-modal');
 const privacyLink = document.getElementById('privacy-link');

@@ -758,7 +758,12 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 2.5rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
+}
+
+.tools__grid:last-of-type {
+    margin-bottom: 0;
+    margin-top: 3rem;
 }
 
 .tool__item {
@@ -801,7 +806,7 @@ ul {
 
 /* ===== Marquee Section ===== */
 .tools__marquee {
-    margin-top: 4rem;
+    margin: 3rem 0;
     overflow: hidden;
     background: var(--bg-light);
     padding: 3rem 0;
@@ -1159,6 +1164,100 @@ ul {
 @media screen and (max-width: 768px) {
     .team__grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ===== FAQ Section ===== */
+.faq {
+    padding: var(--section-padding);
+    background-color: var(--white);
+}
+
+.faq__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.faq__item {
+    background: var(--white);
+    border: 2px solid #e2e8f0;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq__item:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+}
+
+.faq__question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.faq__question:hover {
+    color: var(--primary-color);
+}
+
+.faq__question span {
+    flex: 1;
+    padding-right: 1rem;
+}
+
+.faq__icon {
+    flex-shrink: 0;
+    stroke: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.faq__item.active .faq__icon {
+    transform: rotate(180deg);
+}
+
+.faq__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 2rem;
+}
+
+.faq__item.active .faq__answer {
+    max-height: 500px;
+    padding: 0 2rem 1.5rem;
+}
+
+.faq__answer p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .faq__question {
+        padding: 1.25rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .faq__answer {
+        padding: 0 1.5rem;
+    }
+
+    .faq__item.active .faq__answer {
+        padding: 0 1.5rem 1.25rem;
     }
 }
 

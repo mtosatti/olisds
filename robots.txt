@@ -1,0 +1,15 @@
+# robots.txt para OLIS Data Solutions
+# https://olisds.com.br
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://olisds.com.br/sitemap.xml
+
+# Disallow specific paths (if needed in the future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl delay (optional, removes if causing issues)
+Crawl-delay: 1

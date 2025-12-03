@@ -36,6 +36,14 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- Seção Blog -->
+    <url>
+        <loc>https://olisds.com.br/#blog</loc>
+        <lastmod>2025-02-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
     <!-- Seção FAQ -->
     <url>
         <loc>https://olisds.com.br/#faq</loc>
@@ -50,6 +58,46 @@
         <lastmod>2024-11-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+    </url>
+
+    <!-- Página do Blog -->
+    <url>
+        <loc>https://olisds.com.br/blog.html</loc>
+        <lastmod>2025-02-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Artigo: Business Intelligence -->
+    <url>
+        <loc>https://olisds.com.br/blog.html#bi-conceito</loc>
+        <lastmod>2025-02-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Artigo: Importância dos Dados -->
+    <url>
+        <loc>https://olisds.com.br/blog.html#dados-decisao</loc>
+        <lastmod>2025-02-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Artigo: Kimball e Inmon -->
+    <url>
+        <loc>https://olisds.com.br/blog.html#kimball-inmon</loc>
+        <lastmod>2025-02-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Artigo: Star Schema -->
+    <url>
+        <loc>https://olisds.com.br/blog.html#star-schema</loc>
+        <lastmod>2025-02-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
 </urlset>

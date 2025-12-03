@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Blog OLIS - Insights sobre Business Intelligence e Analytics</title>
+    <meta name="title" content="Blog OLIS - Insights sobre Business Intelligence e Analytics">
+    <meta name="description" content="Artigos técnicos sobre Business Intelligence, Data Warehouse, análise de dados e metodologias de modelagem dimensional. Conteúdo especializado em BI e Analytics.">
+    <meta name="keywords" content="Blog BI, Business Intelligence, Data Warehouse, Kimball, Inmon, Análise de Dados, Tomada de Decisão, Modelagem Dimensional">
+    <meta name="author" content="OLIS Data Solutions">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://olisds.com.br/blog.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://olisds.com.br/blog.html">
+    <meta property="og:title" content="Blog OLIS - Insights sobre Business Intelligence">
+    <meta property="og:description" content="Artigos técnicos sobre BI, Data Warehouse e Analytics">
+    <meta property="og:image" content="https://olisds.com.br/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://olisds.com.br/blog.html">
+    <meta property="twitter:title" content="Blog OLIS - Insights sobre Business Intelligence">
+    <meta property="twitter:description" content="Artigos técnicos sobre BI, Data Warehouse e Analytics">
+    <meta property="twitter:image" content="https://olisds.com.br/assets/og-image.jpg">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Exo+2:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Schema.org Structured Data for Blog -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Blog OLIS Data Solutions",
+        "description": "Insights e conhecimento sobre Business Intelligence e Analytics",
+        "url": "https://olisds.com.br/blog.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "OLIS Data Solutions",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://olisds.com.br/assets/logo.svg"
+            }
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Header/Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <a href="index.html">
+                    <img src="assets/logo.svg" alt="OLIS Data Solutions" class="logo-img">
+                </a>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html#home" class="nav__link">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#services" class="nav__link">Serviços</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#tools" class="nav__link">Ferramentas</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#about" class="nav__link">Sobre Nós</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#faq" class="nav__link">FAQ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="blog.html" class="nav__link active-link">Blog</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#contact" class="nav__link">Contato</a>
+                    </li>
+                </ul>
+                <div class="nav__close" id="nav-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="blog-hero__container container">
+            <h1 class="blog-hero__title">Blog OLIS Data Solutions</h1>
+            <p class="blog-hero__subtitle">Compartilhando insights e conhecimento sobre Business Intelligence e Analytics</p>
+        </div>
+    </section>
+
+    <!-- Blog Articles -->
+    <section class="blog-articles">
+        <div class="blog-articles__container container">
+
+            <!-- Article 1: Business Intelligence -->
+            <article class="blog-article" id="bi-conceito">
+                <div class="article__header">
+                    <div class="article__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h2 class="article__title">Business Intelligence: o que é e para que serve</h2>
+                    <div class="article__meta">
+                        <span class="article__date">Dezembro 2024</span>
+                        <span class="article__separator">•</span>
+                        <span class="article__reading-time">8 min de leitura</span>
+                    </div>
+                </div>
+
+                <div class="article__content">
+                    <h3>Introdução</h3>
+                    <p>
+                        Business Intelligence (BI) representa um conjunto de processos, tecnologias e ferramentas que
+                        transformam dados brutos em informações estruturadas, permitindo análises precisas e embasando
+                        decisões estratégicas nas organizações. Mais do que uma simples tecnologia, BI constitui uma
+                        disciplina que permeia toda a cadeia de valor da informação empresarial.
+                    </p>
+
+                    <h3>Definição e Escopo</h3>
+                    <p>
+                        O conceito de Business Intelligence engloba diversas práticas e metodologias voltadas à coleta,
+                        integração, análise e apresentação de dados empresariais. Essa disciplina compreende desde a
+                        arquitetura de dados até a criação de dashboards interativos, passando por processos de ETL
+                        (Extract, Transform, Load), modelagem dimensional e governança de dados.
+                    </p>
+                    <p>
+                        Em sua essência, BI não se limita apenas a ferramentas de visualização ou relatórios. Trata-se
+                        de uma abordagem sistemática que considera toda a jornada do dado: desde sua captura nas fontes
+                        operacionais, seu tratamento e armazenamento em estruturas analíticas adequadas, até sua
+                        disponibilização em formatos que facilitem a compreensão e a tomada de decisão.
+                    </p>
+
+                    <h3>Componentes Fundamentais</h3>
+                    <p>
+                        A arquitetura de uma solução de BI moderna compreende diversos componentes interligados.
+                        A camada de integração de dados é responsável pela extração de informações de múltiplas fontes
+                        heterogêneas, sua transformação conforme regras de negócio estabelecidas e seu carregamento em
+                        repositórios centralizados.
+                    </p>
+                    <p>
+                        O Data Warehouse representa o repositório central que armazena dados históricos de forma
+                        estruturada e otimizada para consultas analíticas. Diferentemente dos sistemas transacionais,
+                        que priorizam operações de escrita e leitura rápidas de registros individuais, o Data Warehouse
+                        é projetado para suportar consultas complexas que agregam grandes volumes de dados.
+                    </p>
+                    <p>
+                        A camada semântica atua como intermediária entre os dados técnicos armazenados e os usuários
+                        finais, traduzindo estruturas complexas de banco de dados em conceitos de negócio compreensíveis.
+                        Finalmente, as ferramentas de visualização e análise permitem que os usuários explorem os dados,
+                        identifiquem padrões e extraiam insights relevantes.
+                    </p>
+
+                    <h3>Aplicações Práticas</h3>
+                    <p>
+                        As organizações aplicam Business Intelligence em diversos contextos para impulsionar seu
+                        desempenho. Na área comercial, análises de vendas permitem identificar produtos mais rentáveis,
+                        sazonalidades, comportamento de clientes e efetividade de campanhas de marketing. Gestores
+                        podem acompanhar indicadores como ticket médio, taxa de conversão e lifetime value de clientes.
+                    </p>
+                    <p>
+                        No contexto financeiro, BI possibilita monitoramento detalhado de receitas, despesas, fluxo de
+                        caixa e rentabilidade por diferentes dimensões de análise. Projeções financeiras baseadas em
+                        dados históricos auxiliam no planejamento orçamentário e na identificação de oportunidades de
+                        redução de custos.
+                    </p>
+                    <p>
+                        Na gestão de operações, indicadores de desempenho operacional (KPIs) permitem monitorar
+                        eficiência de processos, produtividade de equipes, qualidade de entregas e aderência a SLAs.
+                        Análises preditivas podem antecipar gargalos operacionais e orientar alocação de recursos.
+                    </p>
+
+                    <h3>Benefícios Organizacionais</h3>
+                    <p>
+                        A implementação adequada de uma estratégia de BI gera benefícios tangíveis e mensuráveis.
+                        A democratização do acesso à informação reduz a dependência de áreas técnicas para obtenção
+                        de relatórios, acelerando processos decisórios. A padronização de métricas elimina divergências
+                        entre diferentes áreas e estabelece uma única versão da verdade organizacional.
+                    </p>
+                    <p>
+                        Decisões baseadas em dados concretos tendem a apresentar maior assertividade do que aquelas
+                        fundamentadas exclusivamente em intuição ou experiência. A capacidade de analisar grandes
+                        volumes de dados históricos revela padrões e tendências que não seriam perceptíveis através
+                        de análises manuais ou amostragens limitadas.
+                    </p>
+                    <p>
+                        Além disso, soluções de BI bem estruturadas proporcionam agilidade na identificação de
+                        problemas e oportunidades. Alertas automatizados podem notificar gestores sobre desvios em
+                        indicadores críticos, permitindo ações corretivas tempestivas.
+                    </p>
+
+                    <h3>Evolução e Tendências</h3>
+                    <p>
+                        O campo de Business Intelligence continua evoluindo significativamente. A migração de
+                        infraestruturas locais para ambientes em nuvem democratizou o acesso a tecnologias avançadas,
+                        reduzindo barreiras de entrada relacionadas a investimento inicial em hardware e software.
+                    </p>
+                    <p>
+                        A incorporação de técnicas de Machine Learning e Inteligência Artificial amplia as
+                        possibilidades analíticas, permitindo análises preditivas, detecção automática de anomalias
+                        e geração de insights assistidos por algoritmos. A análise em tempo real possibilita
+                        monitoramento contínuo de operações e respostas imediatas a eventos críticos.
+                    </p>
+                    <p>
+                        O conceito de Self-Service BI empodara usuários de negócio a criar suas próprias análises
+                        sem dependência constante de equipes técnicas, desde que observadas políticas de governança
+                        que garantam qualidade e segurança dos dados.
+                    </p>
+
+                    <h3>Considerações Finais</h3>
+                    <p>
+                        Business Intelligence representa um investimento estratégico essencial para organizações que
+                        buscam competitividade em mercados cada vez mais orientados por dados. Sua implementação
+                        efetiva requer não apenas tecnologia adequada, mas também processos bem definidos, governança
+                        clara e cultura organizacional que valorize decisões baseadas em evidências.
+                    </p>
+                    <p>
+                        O sucesso de iniciativas de BI está intimamente ligado ao alinhamento entre objetivos de
+                        negócio e capacidades técnicas, à qualidade dos dados utilizados e ao engajamento dos usuários
+                        finais. Organizações que investem consistentemente em suas capacidades analíticas posicionam-se
+                        favoravelmente para enfrentar desafios complexos e capitalizar oportunidades emergentes.
+                    </p>
+                </div>
+            </article>
+
+            <div class="article-divider"></div>
+
+            <!-- Article 2: Importância dos Dados -->
+            <article class="blog-article" id="dados-decisao">
+                <div class="article__header">
+                    <div class="article__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                    <h2 class="article__title">A importância dos dados no processo de tomada de decisão</h2>
+                    <div class="article__meta">
+                        <span class="article__date">Dezembro 2024</span>
+                        <span class="article__separator">•</span>
+                        <span class="article__reading-time">7 min de leitura</span>
+                    </div>
+                </div>
+
+                <div class="article__content">
+                    <h3>Introdução</h3>
+                    <p>
+                        A capacidade de tomar decisões fundamentadas em dados constitui um diferencial competitivo
+                        determinante no cenário empresarial contemporâneo. Organizações que desenvolvem maturidade
+                        analítica e estabelecem processos decisórios orientados por evidências demonstram desempenho
+                        superior consistente em comparação com aquelas que se apoiam predominantemente em intuição
+                        ou experiência subjetiva.
+                    </p>
+
+                    <h3>Dados como Ativos Estratégicos</h3>
+                    <p>
+                        Dados empresariais representam ativos estratégicos cujo valor aumenta quando adequadamente
+                        coletados, organizados e analisados. Diferentemente de recursos tradicionais que se depreciam
+                        com o uso, dados bem gerenciados tendem a valorizar-se ao longo do tempo, especialmente quando
+                        acumulados historicamente e enriquecidos com contexto de negócio.
+                    </p>
+                    <p>
+                        Essa perspectiva exige mudança paradigmática na forma como organizações tratam suas informações.
+                        Dados não devem ser considerados subprodutos de processos operacionais, mas sim insumos
+                        fundamentais para inteligência de negócio. Sua gestão adequada demanda investimentos em
+                        infraestrutura, processos e competências específicas.
+                    </p>
+
+                    <h3>Redução de Incertezas</h3>
+                    <p>
+                        Decisões empresariais invariavelmente envolvem algum grau de incerteza quanto a resultados
+                        futuros. Análises baseadas em dados históricos permitem quantificar probabilidades, identificar
+                        padrões recorrentes e estabelecer correlações entre variáveis, reduzindo substancialmente o
+                        nível de incerteza associado às escolhas estratégicas.
+                    </p>
+                    <p>
+                        Modelos preditivos construídos a partir de dados históricos possibilitam projetar cenários
+                        futuros com maior precisão. Técnicas estatísticas aplicadas sobre séries temporais revelam
+                        tendências, sazonalidades e anomalias que informam planejamento de demanda, alocação de
+                        recursos e estratégias de precificação.
+                    </p>
+                    <p>
+                        A quantificação de riscos mediante análise de dados permite que gestores avaliem não apenas
+                        o retorno esperado de decisões, mas também sua variabilidade e cenários adversos. Essa
+                        compreensão ampliada fundamenta escolhas mais balanceadas entre risco e retorno.
+                    </p>
+
+                    <h3>Objetividade e Eliminação de Vieses</h3>
+                    <p>
+                        Processos decisórios baseados exclusivamente em percepções subjetivas estão susceptíveis a
+                        diversos vieses cognitivos bem documentados pela literatura de ciências comportamentais.
+                        Viés de confirmação, ancoragem, disponibilidade e excesso de confiança frequentemente distorcem
+                        julgamentos e conduzem a decisões subótimas.
+                    </p>
+                    <p>
+                        Análises estruturadas de dados introduzem objetividade ao processo decisório, contrapondo
+                        evidências empíricas a percepções que podem estar enviesadas. Indicadores quantitativos
+                        estabelecem referências objetivas para avaliação de desempenho e comparação de alternativas.
+                    </p>
+                    <p>
+                        Importante ressaltar que dados não eliminam completamente a necessidade de julgamento humano,
+                        mas fornecem fundamentação sólida sobre a qual experiência e intuição podem se apoiar. A
+                        combinação de análise quantitativa rigorosa com conhecimento contextual profundo tende a
+                        produzir decisões superiores.
+                    </p>
+
+                    <h3>Agilidade e Adaptabilidade</h3>
+                    <p>
+                        Ambientes de negócio contemporâneos caracterizam-se por dinamismo e complexidade crescentes.
+                        Capacidade de responder rapidamente a mudanças de mercado, comportamento de clientes ou
+                        movimentos competitivos representa vantagem competitiva significativa.
+                    </p>
+                    <p>
+                        Sistemas de Business Intelligence que disponibilizam informações atualizadas em tempo real
+                        permitem que organizações monitorem continuamente indicadores críticos e identifiquem
+                        prontamente desvios que demandem ação. Dashboards executivos consolidam visões multidimensionais
+                        do negócio, facilitando identificação rápida de problemas e oportunidades.
+                    </p>
+                    <p>
+                        Essa agilidade analítica habilita organizações a adotar posturas adaptativas, ajustando
+                        estratégias e táticas conforme evidências emergentes. Ciclos de feedback acelerados entre
+                        ação e mensuração de resultados aceleram aprendizado organizacional e refinamento de
+                        abordagens.
+                    </p>
+
+                    <h3>Alinhamento Organizacional</h3>
+                    <p>
+                        Disponibilidade de dados consistentes e acessíveis promove alinhamento entre diferentes áreas
+                        e níveis hierárquicos da organização. Quando todos trabalham com as mesmas métricas e
+                        definições, elimina-se fonte significativa de conflitos e ineficiências associadas a
+                        divergências de informação.
+                    </p>
+                    <p>
+                        Objetivos estratégicos traduzidos em indicadores mensuráveis estabelecem direcionamento claro
+                        e permitem avaliação objetiva de progresso. Cascateamento de metas desde nível estratégico até
+                        operacional garante que esforços individuais e de equipes contribuam coerentemente para
+                        objetivos organizacionais amplos.
+                    </p>
+                    <p>
+                        Transparência proporcionada por sistemas de BI bem implementados fortalece accountability,
+                        uma vez que resultados tornam-se visíveis e mensuráveis. Essa visibilidade incentiva
+                        comprometimento com metas e facilita identificação de áreas que requerem suporte ou
+                        intervenção.
+                    </p>
+
+                    <h3>Aprendizado Contínuo</h3>
+                    <p>
+                        Organizações orientadas por dados estabelecem cultura de aprendizado contínuo baseada em
+                        experimentação e mensuração rigorosa de resultados. Hipóteses sobre causas de problemas ou
+                        efetividade de iniciativas podem ser testadas mediante análise de dados, promovendo
+                        abordagem científica à gestão.
+                    </p>
+                    <p>
+                        Testes A/B, análises de coorte e outras metodologias analíticas permitem avaliar impacto de
+                        mudanças de forma controlada, isolando efeitos específicos de intervenções. Conhecimento
+                        acumulado através dessas análises constrói capacidade organizacional progressivamente mais
+                        sofisticada.
+                    </p>
+                    <p>
+                        Reflexão sistemática sobre sucessos e fracassos passados, apoiada por análises de dados,
+                        permite extrair lições valiosas e evitar repetição de erros. Organizações que institucionalizam
+                        esses processos de aprendizado desenvolvem vantagens competitivas sustentáveis.
+                    </p>
+
+                    <h3>Considerações Finais</h3>
+                    <p>
+                        A centralidade dos dados nos processos decisórios modernos reflete não apenas disponibilidade
+                        crescente de informação e ferramentas analíticas, mas fundamentalmente reconhecimento de que
+                        decisões embasadas empiricamente superam consistentemente aquelas baseadas exclusivamente em
+                        intuição.
+                    </p>
+                    <p>
+                        Desenvolvimento de capacidades analíticas robustas requer investimento sustentado em tecnologia,
+                        processos e pessoas. Organizações que priorizam qualidade de dados, governança adequada e
+                        alfabetização analítica de suas equipes posicionam-se favoravelmente para capturar valor
+                        crescente de seus ativos informacionais e estabelecer vantagens competitivas duradouras.
+                    </p>
+                </div>
+            </article>
+
+            <div class="article-divider"></div>
+
+            <!-- Article 3: Kimball e Inmon -->
+            <article class="blog-article" id="kimball-inmon">
+                <div class="article__header">
+                    <div class="article__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="article__title">Kimball e Inmon: metodologias diferentes, um mesmo objetivo</h2>
+                    <div class="article__meta">
+                        <span class="article__date">Dezembro 2024</span>
+                        <span class="article__separator">•</span>
+                        <span class="article__reading-time">9 min de leitura</span>
+                    </div>
+                </div>
+
+                <div class="article__content">
+                    <h3>Introdução</h3>
+                    <p>
+                        A modelagem de Data Warehouses constitui disciplina fundamental em arquiteturas de Business
+                        Intelligence. Duas abordagens metodológicas dominam este campo: a modelagem dimensional
+                        proposta por Ralph Kimball e a arquitetura Corporate Information Factory (CIF) desenvolvida
+                        por Bill Inmon. Ambas visam construir repositórios analíticos eficientes, porém diferem
+                        significativamente em filosofia, estrutura e estratégia de implementação.
+                    </p>
+
+                    <h3>Abordagem Kimball: Modelagem Dimensional</h3>
+                    <p>
+                        A metodologia Kimball fundamenta-se no conceito de modelagem dimensional, estruturando dados
+                        em esquemas estrela (star schema) ou floco de neve (snowflake schema). Essa abordagem organiza
+                        informações em torno de processos de negócio específicos, criando data marts dimensionais que
+                        respondem a requisitos analíticos bem definidos.
+                    </p>
+                    <p>
+                        No esquema estrela característico de Kimball, uma tabela fato central contém métricas
+                        quantitativas de interesse (vendas, custos, quantidades), cercada por tabelas dimensão que
+                        fornecem contexto descritivo (tempo, produto, cliente, localização). Essa estrutura
+                        desnormalizada privilegia performance de consultas analíticas e compreensibilidade por
+                        usuários de negócio.
+                    </p>
+                    <p>
+                        A estratégia de implementação bottom-up proposta por Kimball recomenda desenvolvimento
+                        iterativo de data marts departamentais ou funcionais, que posteriormente integram-se mediante
+                        dimensões conformadas. Dimensões conformadas garantem consistência semântica entre diferentes
+                        data marts, permitindo análises integradas cross-funcional.
+                    </p>
+                    <p>
+                        Bus architecture, conceito central na metodologia Kimball, estabelece matriz que mapeia
+                        processos de negócio contra dimensões compartilhadas. Essa arquitetura assegura que data marts
+                        desenvolvidos independentemente mantenham compatibilidade e possam consolidar-se em visão
+                        empresarial unificada.
+                    </p>
+
+                    <h3>Abordagem Inmon: Corporate Information Factory</h3>
+                    <p>
+                        Bill Inmon propõe arquitetura centralizada conhecida como Corporate Information Factory, onde
+                        Data Warehouse corporativo serve como repositório central de dados integrados, normalizados e
+                        historicamente acurados. Essa estrutura enfatiza construção de fonte única e consistente da
+                        verdade organizacional antes de derivar data marts especializados.
+                    </p>
+                    <p>
+                        Na metodologia Inmon, dados provenientes de sistemas operacionais são integrados e
+                        normalizados em terceira forma normal dentro do Data Warehouse corporativo. Essa normalização
+                        elimina redundâncias, garante integridade referencial e estabelece modelo de dados abrangente
+                        que representa completamente o domínio de negócio da organização.
+                    </p>
+                    <p>
+                        A partir deste repositório central normalizado, derivam-se data marts departamentais
+                        desnormalizados otimizados para consultas específicas. Essa estratégia top-down prioriza
+                        construção de fundação sólida e arquiteturalmente coerente antes de atender necessidades
+                        analíticas particulares.
+                    </p>
+                    <p>
+                        Inmon advoga separação clara entre ambientes operacionais e analíticos. Sistemas transacionais
+                        (OLTP) otimizam-se para processamento de transações rápidas e confiáveis, enquanto Data
+                        Warehouse (OLAP) otimiza-se para consultas complexas sobre grandes volumes históricos.
+                        Essa separação evita impactos de performance de análises sobre operações críticas.
+                    </p>
+
+                    <h3>Comparação Estrutural</h3>
+                    <p>
+                        Estruturalmente, abordagens Kimball e Inmon divergem fundamentalmente. Kimball privilegia
+                        desnormalização em esquemas estrela que facilitam compreensão e performance de consultas.
+                        Junções entre tabela fato e dimensões são simples e diretas, resultando em queries SQL
+                        relativamente descomplicadas.
+                    </p>
+                    <p>
+                        Inmon, por sua vez, mantém estrutura normalizada no Data Warehouse corporativo, aceitando
+                        complexidade adicional de queries em prol de integridade, flexibilidade e eliminação de
+                        redundâncias. Data marts derivados podem desnormalizar dados conforme necessidades específicas,
+                        mas núcleo permanece rigorosamente normalizado.
+                    </p>
+                    <p>
+                        Gestão de dados históricos também difere entre metodologias. Kimball tipicamente implementa
+                        slowly changing dimensions (SCD) com tipos 1, 2 e 3 para rastrear mudanças em atributos
+                        dimensionais. Inmon tende a favorecer versionamento completo de registros e time-stamping
+                        detalhado no Data Warehouse corporativo.
+                    </p>
+
+                    <h3>Estratégias de Implementação</h3>
+                    <p>
+                        Kimball propõe abordagem incremental bottom-up que possibilita entregas rápidas de valor.
+                        Organizações podem implementar data mart inicial abordando processo de negócio prioritário,
+                        demonstrando retorno sobre investimento em prazo relativamente curto. Sucessivos data marts
+                        expandem gradualmente cobertura analítica.
+                    </p>
+                    <p>
+                        Essa estratégia mitiga riscos associados a projetos de grande escala, permite ajustes baseados
+                        em aprendizados de iterações anteriores e mantém alinhamento próximo com necessidades de
+                        negócio. Contudo, requer disciplina rigorosa na implementação de dimensões conformadas para
+                        evitar proliferação de data marts incompatíveis.
+                    </p>
+                    <p>
+                        Inmon defende abordagem top-down que inicia com modelagem abrangente do Data Warehouse
+                        corporativo. Essa estratégia demanda investimento inicial substancial e prazo mais longo até
+                        primeiras entregas, porém estabelece fundação arquitetural sólida que facilita expansões
+                        futuras e garante consistência corporativa desde início.
+                    </p>
+                    <p>
+                        Organizações adotando metodologia Inmon tipicamente conduzem extensa fase de análise e
+                        modelagem antes de implementação, mapeando comprehensivamente domínio de negócio e requisitos
+                        analíticos. Resultado é arquitetura mais estável e menos propensa a reestruturações
+                        significativas, porém com time-to-value inicial mais longo.
+                    </p>
+
+                    <h3>Adequação e Contexto de Aplicação</h3>
+                    <p>
+                        Escolha entre metodologias Kimball e Inmon deve considerar contexto organizacional específico,
+                        incluindo maturidade analítica, recursos disponíveis, urgência de resultados e complexidade
+                        do domínio de negócio.
+                    </p>
+                    <p>
+                        Abordagem Kimball adapta-se particularmente bem a organizações que necessitam demonstrar valor
+                        rapidamente, possuem recursos limitados ou priorizam flexibilidade e agilidade. Empresas com
+                        processos de negócio relativamente independentes beneficiam-se da possibilidade de desenvolver
+                        data marts especializados sem necessariamente implementar infraestrutura corporativa abrangente
+                        previamente.
+                    </p>
+                    <p>
+                        Metodologia Inmon favorece organizações de grande porte com ecossistemas de dados complexos,
+                        requisitos rigorosos de governança e integração, e capacidade de investimento sustentado em
+                        infraestrutura de dados. Empresas altamente reguladas ou que demandam auditabilidade detalhada
+                        frequentemente preferem rigor arquitetural da abordagem Inmon.
+                    </p>
+                    <p>
+                        Importante reconhecer que metodologias não são mutuamente exclusivas. Muitas organizações
+                        adotam abordagens híbridas, aproveitando conceitos de ambas conforme adequação a contextos
+                        específicos. Data Warehouse corporativo normalizado pode coexistir com data marts dimensionais,
+                        combinando benefícios de consistência corporativa com performance e usabilidade de modelagem
+                        dimensional.
+                    </p>
+
+                    <h3>Evolução e Relevância Contemporânea</h3>
+                    <p>
+                        Embora metodologias Kimball e Inmon tenham sido formalizadas décadas atrás, permanecem
+                        fundamentalmente relevantes em arquiteturas modernas de dados. Princípios de modelagem
+                        dimensional aplicam-se igualmente a plataformas cloud de Data Warehouse como Snowflake e
+                        BigQuery, assim como a implementações on-premises tradicionais.
+                    </p>
+                    <p>
+                        Emergência de conceitos como Data Lake e arquiteturas Lambda/Kappa introduz camadas
+                        adicionais de complexidade, mas fundamentos de organização dimensional e integração corporativa
+                        continuam aplicáveis. Ferramentas modernas de transformação de dados como dbt facilitam
+                        implementação de modelagem dimensional através de transformações SQL versionadas e testáveis.
+                    </p>
+                    <p>
+                        Tendências como self-service BI e democratização de dados reforçam valor da modelagem
+                        dimensional ao estilo Kimball, cuja simplicidade e intuitividade habilitam usuários de negócio
+                        a explorar dados independentemente. Simultaneamente, crescentes volumes de dados e requisitos
+                        de governança validam ênfase de Inmon em arquiteturas corporativas robustas e integradas.
+                    </p>
+
+                    <h3>Considerações Finais</h3>
+                    <p>
+                        Kimball e Inmon oferecem perspectivas complementares sobre desafio de estruturar dados
+                        analíticos efetivamente. Kimball prioriza agilidade, compreensibilidade e alinhamento próximo
+                        com processos de negócio. Inmon enfatiza consistência corporativa, integridade arquitetural e
+                        fundação sólida para crescimento futuro.
+                    </p>
+                    <p>
+                        Profissionais de dados bem-sucedidos compreendem fundamentos e trade-offs de ambas metodologias,
+                        aplicando-as judiciosamente conforme demandas específicas de cada contexto. Dogmatismo
+                        metodológico raramente serve interesses organizacionais; pragmatismo informado e adaptação
+                        contextual produzem resultados superiores.
+                    </p>
+                    <p>
+                        Independentemente de metodologia escolhida, sucesso de iniciativas de Data Warehouse depende
+                        fundamentalmente de qualidade de dados, governança adequada, alinhamento com objetivos de
+                        negócio e engajamento de stakeholders. Metodologia fornece estrutura e orientação, mas
+                        execução disciplinada e foco persistente em valor de negócio determinam resultados finais.
+                    </p>
+                </div>
+            </article>
+
+            <div class="article-divider"></div>
+
+            <!-- Article 4: Star Schema -->
+            <article class="blog-article" id="star-schema">
+                <div class="article__header">
+                    <div class="article__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <h2 class="article__title">Star Schema: uma modelagem que objetiva performance e a análise dos dados</h2>
+                    <div class="article__meta">
+                        <span class="article__date">Fevereiro 2025</span>
+                        <span class="article__separator">•</span>
+                        <span class="article__reading-time">10 min de leitura</span>
+                    </div>
+                </div>
+
+                <div class="article__content">
+                    <h3>Introdução</h3>
+                    <p>
+                        O Star Schema, ou esquema estrela, representa um dos padrões mais fundamentais e amplamente
+                        adotados em modelagem dimensional de Data Warehouses. Desenvolvido e popularizado por Ralph
+                        Kimball, este modelo estrutural prioriza simplicidade, performance de consultas e facilidade
+                        de compreensão, estabelecendo-se como abordagem preferencial para ambientes analíticos que
+                        demandam respostas rápidas e intuitivas a questões complexas de negócio.
+                    </p>
+
+                    <h3>Estrutura Fundamental</h3>
+                    <p>
+                        A arquitetura do Star Schema deriva seu nome da disposição visual que seus componentes assumem
+                        quando representados em diagramas de modelagem de dados. No centro da estrutura reside a tabela
+                        fato, contendo métricas quantitativas mensuráveis do negócio. Circundando esta tabela central,
+                        múltiplas tabelas dimensão fornecem contexto descritivo, criando aspecto visual reminiscente
+                        de uma estrela com seus raios.
+                    </p>
+                    <p>
+                        Tabelas fato armazenam registros de eventos ou transações de negócio, contendo tipicamente
+                        chaves estrangeiras que referenciam dimensões e medidas numéricas aditivas ou semi-aditivas.
+                        Exemplos comuns incluem valores de vendas, quantidades, custos, durações ou contagens.
+                        Cada registro na tabela fato corresponde a uma granularidade específica definida pela
+                        combinação de suas dimensões.
+                    </p>
+                    <p>
+                        Tabelas dimensão contêm atributos descritivos que contextualizam medidas da tabela fato.
+                        Dimensão de tempo registra hierarquias temporais (ano, trimestre, mês, dia), dimensão de
+                        produto descreve características de produtos (categoria, subcategoria, marca, SKU), dimensão
+                        de cliente captura informações demográficas e de segmentação. Diferentemente de modelos
+                        normalizados, dimensões em Star Schema são tipicamente desnormalizadas, consolidando
+                        hierarquias em tabelas únicas.
+                    </p>
+
+                    <h3>Vantagens da Desnormalização</h3>
+                    <p>
+                        A escolha deliberada pela desnormalização de tabelas dimensão constitui decisão arquitetural
+                        fundamental do Star Schema, oferecendo benefícios substanciais para ambientes analíticos.
+                        Queries SQL tornam-se significativamente mais simples, requerendo menor número de junções
+                        para recuperar informações completas. Consulta típica em Star Schema envolve apenas junções
+                        entre tabela fato e dimensões relevantes, sem necessidade de navegação por múltiplos níveis
+                        hierárquicos através de tabelas normalizadas.
+                    </p>
+                    <p>
+                        Performance de consultas beneficia-se substancialmente desta simplificação. Menor quantidade
+                        de junções reduz complexidade de planos de execução que otimizadores de banco de dados devem
+                        processar. Índices em chaves estrangeiras da tabela fato e chaves primárias de dimensões
+                        permitem acesso eficiente. Adicionalmente, engines modernos de Data Warehouse otimizam-se
+                        especificamente para padrões de acesso característicos de Star Schema.
+                    </p>
+                    <p>
+                        Compreensibilidade para usuários de negócio representa vantagem frequentemente subestimada
+                        porém crítica. Analistas e gestores conseguem entender intuitivamente estrutura de dados
+                        organizada dimensionalmente. Ferramentas de Business Intelligence interpretam facilmente
+                        Star Schemas, permitindo construção de relatórios e dashboards mediante interfaces drag-and-drop
+                        sem necessidade de conhecimento profundo de SQL ou estruturas complexas de dados.
+                    </p>
+
+                    <h3>Granularidade e Design de Tabelas Fato</h3>
+                    <p>
+                        Definição precisa de granularidade constitui decisão mais crítica no design de tabelas fato.
+                        Granularidade determina nível de detalhe que cada registro representa e estabelece quais
+                        questões de negócio podem ser respondidas diretamente versus quais requerem agregações.
+                        Princípio geral recomenda capturar dados no nível mais atômico possível, permitindo agregações
+                        posteriores conforme necessidades analíticas.
+                    </p>
+                    <p>
+                        Tabela fato de vendas pode, por exemplo, registrar cada item individual em cada transação,
+                        estabelecendo granularidade ao nível de linha de pedido. Esta escolha permite análises
+                        detalhadas de mix de produtos, comportamento de compra e cálculo de métricas derivadas.
+                        Granularidade menos detalhada (transação completa, dia, semana) simplificaria modelo porém
+                        limitaria capacidade analítica, potencialmente demandando reconstrução custosa posteriormente.
+                    </p>
+                    <p>
+                        Medidas em tabelas fato classificam-se conforme comportamento matemático. Medidas aditivas
+                        (vendas, quantidades, custos) podem ser somadas através de todas as dimensões. Medidas
+                        semi-aditivas (saldos, inventários) somam-se através de algumas dimensões mas não outras
+                        (tipicamente não através de tempo). Medidas não-aditivas (percentuais, ratios) requerem
+                        cálculo baseado em componentes aditivos subjacentes.
+                    </p>
+
+                    <h3>Design de Dimensões e Atributos</h3>
+                    <p>
+                        Dimensões efetivas caracterizam-se por riqueza de atributos descritivos que habilitam
+                        filtros, agrupamentos e drill-downs variados. Dimensão de produto bem projetada contém não
+                        apenas hierarquia categórica (departamento, categoria, subcategoria) mas também atributos
+                        como cor, tamanho, marca, fornecedor, data de introdução e status de descontinuação.
+                        Quanto mais atributos relevantes, maior versatilidade analítica.
+                    </p>
+                    <p>
+                        Hierarquias dimensionais organizam atributos em relacionamentos de um-para-muitos que
+                        suportam navegação drill-down e roll-up. Hierarquia geográfica típica procede de região
+                        para país, estado, cidade e loja. Hierarquia temporal navega de ano para trimestre, mês,
+                        semana e dia. Star Schema implementa estas hierarquias mediante colunas dentro da mesma
+                        tabela dimensão, evitando normalização que exigiria múltiplas tabelas relacionadas.
+                    </p>
+                    <p>
+                        Slowly Changing Dimensions (SCD) abordam desafio crítico de rastreamento de mudanças em
+                        atributos dimensionais ao longo do tempo. Tipo 1 sobrescreve valores antigos, adequado
+                        quando correção de erros ou quando histórico não é relevante. Tipo 2 cria novo registro
+                        com validade temporal, preservando histórico completo e permitindo análises point-in-time.
+                        Tipo 3 adiciona colunas para valor anterior, suportando comparações before-after limitadas.
+                    </p>
+
+                    <h3>Otimização de Performance</h3>
+                    <p>
+                        Embora Star Schema intrinsecamente favoreça performance através de simplificação estrutural,
+                        otimizações adicionais maximizam eficiência em ambientes de produção. Indexação apropriada
+                        representa primeira linha de otimização. Chaves primárias de dimensões e chaves estrangeiras
+                        de tabelas fato devem ser indexadas. Índices bitmap em colunas de baixa cardinalidade
+                        beneficiam particularmente queries analíticas com múltiplas condições de filtro.
+                    </p>
+                    <p>
+                        Particionamento de tabelas fato por dimensão de tempo constitui prática comum que melhora
+                        performance e facilita manutenção. Queries tipicamente filtram por períodos específicos,
+                        permitindo que engine de banco de dados elimine partições irrelevantes (partition pruning).
+                        Manutenção torna-se mais eficiente, possibilitando cargas incrementais em partições recentes
+                        sem impactar dados históricos.
+                    </p>
+                    <p>
+                        Tabelas agregadas pré-calculam sumarizações frequentemente acessadas, reduzindo tempo de
+                        resposta para queries comuns. Agregado mensal de vendas por produto e região evita necessidade
+                        de somar milhões de transações diárias repetidamente. Engines modernos de Data Warehouse
+                        implementam aggregate awareness, redirecionando automaticamente queries para agregados
+                        apropriados quando disponíveis.
+                    </p>
+                    <p>
+                        Compressão de dados reduz footprint de armazenamento e melhora performance de I/O,
+                        particularmente relevante em plataformas columnares como Snowflake, BigQuery e Redshift.
+                        Colunas dimensionais com valores repetidos comprimem-se eficientemente. Técnicas como
+                        dictionary encoding e run-length encoding exploram padrões de repetição característicos
+                        de dados analíticos.
+                    </p>
+
+                    <h3>Comparação com Snowflake Schema</h3>
+                    <p>
+                        Snowflake Schema representa variação do Star Schema onde dimensões são normalizadas em
+                        múltiplas tabelas relacionadas, criando estrutura semelhante a floco de neve. Hierarquia
+                        de produto, por exemplo, poderia decompor-se em tabelas separadas para produto, subcategoria,
+                        categoria e departamento, cada uma relacionada à próxima mediante chaves estrangeiras.
+                    </p>
+                    <p>
+                        Esta normalização reduz redundância de dados e simplifica manutenção de hierarquias.
+                        Alteração de nome de categoria requer atualização em apenas um registro na tabela de categorias,
+                        versus potencialmente milhares de registros em dimensão desnormalizada. Footprint de
+                        armazenamento tende a ser menor, consideração relevante em sistemas legados com restrições
+                        de capacidade.
+                    </p>
+                    <p>
+                        Contudo, benefícios do Snowflake Schema raramente justificam complexidade adicional em
+                        ambientes analíticos modernos. Queries requerem mais junções, complicando lógica SQL e
+                        degradando performance. Usuários de negócio enfrentam maior dificuldade em compreender
+                        estrutura fragmentada. Ferramentas de BI necessitam configuração mais elaborada para
+                        interpretar relacionamentos. Economia de armazenamento tornou-se menos relevante com
+                        redução de custos de storage e eficiência de compressão em plataformas modernas.
+                    </p>
+
+                    <h3>Implementação em Plataformas Modernas</h3>
+                    <p>
+                        Plataformas cloud de Data Warehouse como Snowflake, Google BigQuery e Amazon Redshift
+                        oferecem capacidades otimizadas para Star Schemas. Arquiteturas de storage colunar
+                        beneficiam particularmente cargas de trabalho analíticas, lendo apenas colunas necessárias
+                        para queries específicas. Escalabilidade elástica permite ajustar recursos computacionais
+                        conforme demandas variáveis.
+                    </p>
+                    <p>
+                        Ferramentas de transformação modernas como dbt (data build tool) facilitam construção e
+                        manutenção de Star Schemas através de SQL versionado e testável. Modelos de staging extraem
+                        e limpam dados de fontes operacionais. Modelos intermediários aplicam lógica de negócio.
+                        Modelos finais estruturam dados em tabelas fato e dimensão, documentando transformações
+                        e lineage de dados de forma transparente.
+                    </p>
+                    <p>
+                        Tecnologias de virtualização de dados e semantic layers introduzem camadas adicionais que
+                        abstraem complexidades de storage físico. Looker, por exemplo, permite definir Star Schema
+                        lógico sobre estruturas físicas variadas, centralizando lógica de negócio e garantindo
+                        consistência através de diferentes ferramentas de consumo. Esta abordagem combina benefícios
+                        de Star Schema para consumo com flexibilidade de storage otimizado.
+                    </p>
+
+                    <h3>Padrões Avançados e Extensões</h3>
+                    <p>
+                        Factless fact tables registram eventos sem medidas numéricas associadas, capturando apenas
+                        relacionamentos entre dimensões. Tabela de presença de alunos em aulas registra combinações
+                        de estudante, curso e data sem métricas quantitativas, porém habilita análises de frequência
+                        e engajamento. Promotional coverage tables documentam quais produtos estavam em promoção
+                        em quais lojas durante quais períodos, suportando análises de lift promocional.
+                    </p>
+                    <p>
+                        Junk dimensions consolidam flags e indicadores de baixa cardinalidade que não justificam
+                        dimensões dedicadas. Combinações de indicadores como método de pagamento, tipo de envio
+                        e status de cliente especial formam dimensão artificial que simplifica tabela fato e
+                        melhora performance. Número de combinações possíveis cresce como produto cartesiano,
+                        porém permanece gerenciável para conjuntos pequenos de atributos.
+                    </p>
+                    <p>
+                        Degenerate dimensions consistem em atributos dimensionais armazenados diretamente na
+                        tabela fato sem tabela dimensão correspondente. Número de pedido ou número de transação
+                        frequentemente implementam-se como dimensões degeneradas, servindo primariamente para
+                        drill-through a detalhes transacionais sem agregar valor analítico por si mesmos.
+                    </p>
+                    <p>
+                        Bridge tables ou helper tables resolvem relacionamentos muitos-para-muitos entre fatos
+                        e dimensões. Conta bancária com múltiplos titulares requer bridge table que mapeia
+                        conta para múltiplos clientes, incluindo ponderações para alocação proporcional de
+                        saldos e transações. Este padrão preserva integridade analítica em cenários que
+                        naturalmente violam relacionamento um-para-muitos assumido em Star Schema básico.
+                    </p>
+
+                    <h3>Governança e Manutenção</h3>
+                    <p>
+                        Sucesso sustentável de implementações Star Schema requer governança adequada e processos
+                        de manutenção disciplinados. Definição e documentação de métricas devem ser centralizadas,
+                        garantindo que usuários de diferentes áreas calculem indicadores consistentemente.
+                        Glossário de negócio traduz terminologia técnica em linguagem acessível, facilitando
+                        adoção e reduzindo mal-entendidos.
+                    </p>
+                    <p>
+                        Gestão de qualidade de dados implementa validações em pipelines ETL/ELT, identificando
+                        anomalias, valores faltantes e violações de integridade referencial antes de propagação
+                        para consumo. Monitoramento contínuo rastreia volumes de carga, tempos de processamento
+                        e freshness de dados, alertando sobre desvios que possam indicar problemas.
+                    </p>
+                    <p>
+                        Versionamento de schema e processos de migração permitem evolução estrutural sem
+                        disruption de análises em produção. Adição de novas dimensões ou atributos deve seguir
+                        procedimentos controlados que consideram impactos em queries, relatórios e integrações
+                        downstream. Backward compatibility, quando possível, minimiza necessidade de retrabalho
+                        em artefatos existentes.
+                    </p>
+
+                    <h3>Considerações Finais</h3>
+                    <p>
+                        Star Schema estabeleceu-se como padrão dominante em modelagem dimensional através de
+                        equilíbrio pragmático entre simplicidade, performance e usabilidade. Sua estrutura
+                        intuitiva facilita compreensão por audiências técnicas e de negócio. Otimizações
+                        naturais favorecem performance de queries analíticas. Compatibilidade com ferramentas
+                        de BI modernas acelera time-to-value de iniciativas analíticas.
+                    </p>
+                    <p>
+                        Arquitetos de dados bem-sucedidos reconhecem que Star Schema não constitui solução
+                        universal para todos os cenários, porém representa ponto de partida robusto para
+                        maioria de implementações analíticas. Desvios de padrão devem ser justificados por
+                        requisitos específicos bem compreendidos, não por preferências arbitrárias ou
+                        dogmatismo metodológico.
+                    </p>
+                    <p>
+                        À medida que volumes de dados crescem e demandas analíticas se sofisticam, princípios
+                        fundamentais de Star Schema permanecem relevantes. Plataformas evoluem, ferramentas
+                        se modernizam, mas necessidade humana fundamental de compreender padrões em dados
+                        complexos persiste. Star Schema, através de sua elegância estrutural e efetividade
+                        prática, continuará servindo como fundação para soluções analíticas que transformam
+                        dados em insights acionáveis.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-banner">
+        <div class="cta__container container">
+            <h2 class="cta__title">Quer implementar soluções de BI na sua empresa?</h2>
+            <p class="cta__description">Nossa equipe está pronta para ajudar sua organização a extrair máximo valor dos seus dados.</p>
+            <a href="index.html#contact" class="btn btn-primary btn-large">Entre em Contato</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <a href="index.html">
+                        <img src="assets/logo.svg" alt="OLIS Data Solutions" class="footer__logo">
+                    </a>
+                    <p class="footer__text">
+                        Transformando dados em decisões estratégicas com soluções de BI personalizadas.
+                    </p>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Navegação</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html#services">Serviços</a></li>
+                        <li><a href="index.html#about">Sobre Nós</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.html#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Parceiros</h4>
+                    <ul class="footer__links">
+                        <li><a href="https://fiptech.com.br/" target="_blank" rel="noopener noreferrer">FIPTech - Serviços de TI</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__title">Legal</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html#terms-link">Termos e Condições</a></li>
+                        <li><a href="index.html#privacy-link">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 OLIS Data Solutions. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

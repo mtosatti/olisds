@@ -7,23 +7,23 @@ Site institucional da OLIS Data Solutions - Consultoria e implantação de solu�
 ```
 olisds/
 ├── README.md                    # Este arquivo
-└── site/
-    ├── scr/
-    │   ├── index.html          # Página principal do site
-    │   └── assets/             # Recursos visuais
-    │       ├── logo.svg        # Logo da empresa
-    │       ├── airflow.svg     # Ícone Apache Airflow
-    │       ├── fivetran.svg    # Ícone Fivetran
-    │       ├── mysql.svg       # Ícone MySQL
-    │       ├── postgres.svg    # Ícone PostgreSQL
-    │       ├── powerbi.svg     # Ícone Power BI
-    │       └── snowflake.svg   # Ícone Snowflake
-    ├── css/
-    │   └── styles.css          # Estilos do site
-    ├── js/
-    │   └── script.js           # JavaScript (interações, formulário, etc.)
-    ├── CONFIGURACAO_EMAIL.md   # Guia de configuração do EmailJS
-    └── README.md               # Documentação do site
+├── index.html                   # Página principal do site
+├── blog.html                    # Página do blog com artigos técnicos
+├── sitemap.xml                  # Mapa do site para SEO
+├── robots.txt                   # Instruções para crawlers
+├── assets/                      # Recursos visuais
+│   ├── logo.svg                # Logo da empresa
+│   ├── airflow.svg             # Ícone Apache Airflow
+│   ├── fivetran.svg            # Ícone Fivetran
+│   ├── mysql.svg               # Ícone MySQL
+│   ├── postgres.svg            # Ícone PostgreSQL
+│   ├── powerbi.svg             # Ícone Power BI
+│   └── snowflake.svg           # Ícone Snowflake
+├── css/
+│   └── styles.css              # Estilos do site (incluindo blog)
+├── js/
+│   └── script.js               # JavaScript (interações, formulário, etc.)
+└── CONFIGURACAO_EMAIL.md       # Guia de configuração do EmailJS
 ```
 
 ## 🚀 Funcionalidades
@@ -31,7 +31,8 @@ olisds/
 ### ✅ Implementadas
 - [x] Design responsivo para todos os dispositivos
 - [x] Animações suaves e efeitos visuais
-- [x] Seções: Hero, Estatísticas, Serviços, Ferramentas, Processo, Time, FAQ, Contato
+- [x] Seções: Hero, Estatísticas, Serviços, Ferramentas, Processo, Time, Blog, FAQ, Contato
+- [x] **Blog Técnico** com 4 artigos em tom formal sobre BI e Analytics
 - [x] Formulário de contato com EmailJS
 - [x] Proteção contra spam com Google reCAPTCHA v3
 - [x] Máscara automática no campo de telefone: (99) 99999-9999
@@ -164,7 +165,40 @@ O site é totalmente responsivo e testado em:
 **Recomendado:**
 - Configurar Google Analytics 4
 - Criar Google Business Profile
-- Implementar estratégia de conteúdo (blog)
+- ✅ ~~Implementar estratégia de conteúdo (blog)~~ **Concluído!**
+
+## 📝 Blog
+
+### Artigos Publicados
+O site conta com uma seção de blog dedicada a compartilhar conhecimento técnico sobre Business Intelligence e Analytics:
+
+1. **Business Intelligence: o que é e para que serve**
+   - Fundamentos do BI
+   - Componentes essenciais (ETL, Data Warehouse, visualização)
+   - Aplicações práticas e benefícios
+
+2. **A importância dos dados no processo de tomada de decisão**
+   - Dados como ativos estratégicos
+   - Redução de incertezas e eliminação de vieses
+   - Agilidade e alinhamento organizacional
+
+3. **Kimball e Inmon: metodologias diferentes, um mesmo objetivo**
+   - Comparação detalhada entre as metodologias
+   - Abordagem bottom-up vs top-down
+   - Cenários de aplicação
+
+4. **Star Schema: uma modelagem que objetiva performance e a análise dos dados**
+   - Estrutura fundamental do Star Schema
+   - Otimização de performance
+   - Padrões avançados e boas práticas
+
+### Características do Blog
+- Artigos em **tom formal e técnico**
+- Conteúdo direcionado a profissionais de TI e gestores
+- Design consistente com o restante do site
+- Totalmente responsivo
+- Otimizado para SEO com meta tags específicas
+- Schema.org markup para melhor indexação
 
 ---
 

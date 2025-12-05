@@ -32,7 +32,7 @@ olisds/
 - [x] Design responsivo para todos os dispositivos
 - [x] Animações suaves e efeitos visuais
 - [x] Seções: Hero, Estatísticas, Serviços, Ferramentas, Processo, Time, Blog, FAQ, Contato
-- [x] **Blog Técnico** com 4 artigos em tom formal sobre BI e Analytics
+- [x] **Blog Técnico** com 7 artigos em tom formal sobre BI e Analytics
 - [x] Formulário de contato com EmailJS
 - [x] Proteção contra spam com Google reCAPTCHA v3
 - [x] Máscara automática no campo de telefone: (99) 99999-9999
@@ -191,6 +191,21 @@ O site conta com uma seção de blog dedicada a compartilhar conhecimento técni
    - Estrutura fundamental do Star Schema
    - Otimização de performance
    - Padrões avançados e boas práticas
+
+5. **Carga completa ou incremental: entenda os tipos e a melhor forma de carregar seus dados**
+   - Conceitos de carga completa e incremental
+   - Comparação de performance e recursos
+   - Critérios de decisão e padrões avançados
+
+6. **Data Warehouse: centralizando dados para gerar conhecimento**
+   - Características fundamentais e arquitetura em camadas
+   - Processos de ETL/ELT
+   - Plataformas modernas e tendências
+
+7. **Storytelling: seus dados contam histórias**
+   - Fundamentos de data storytelling
+   - Estrutura narrativa e visualização efetiva
+   - Técnicas avançadas e impacto organizacional
 
 ### Características do Blog
 - Artigos em **tom formal e técnico**

@@ -100,4 +100,28 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- Artigo: Carga Completa ou Incremental -->
+    <url>
+        <loc>https://olisds.com.br/blog.html#carga-dados</loc>
+        <lastmod>2025-02-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Artigo: Data Warehouse -->
+    <url>
+        <loc>https://olisds.com.br/blog.html#data-warehouse</loc>
+        <lastmod>2025-02-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Artigo: Storytelling -->
+    <url>
+        <loc>https://olisds.com.br/blog.html#storytelling</loc>
+        <lastmod>2025-02-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 </urlset>

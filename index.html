@@ -668,7 +668,14 @@
                 <h2 class="section__title">Blog OLIS</h2>
                 <p class="section__subtitle">Insights e conhecimento sobre Business Intelligence e Analytics</p>
             </div>
-            <div class="blog-preview__grid">
+            <div class="blog-carousel">
+                <button class="blog-carousel__nav blog-carousel__nav--prev" aria-label="Artigo anterior">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <div class="blog-carousel__wrapper">
+                    <div class="blog-carousel__track">
                 <!-- Blog Post 1 -->
                 <article class="blog-preview__card">
                     <div class="blog-preview__icon">
@@ -836,7 +843,15 @@
                         </svg>
                     </a>
                 </article>
+                    </div>
+                </div>
+                <button class="blog-carousel__nav blog-carousel__nav--next" aria-label="Próximo artigo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
             </div>
+            <div class="blog-carousel__indicators"></div>
             <div class="blog-preview__cta">
                 <a href="blog.html" class="btn btn-outline">Ver Todos os Artigos</a>
             </div>

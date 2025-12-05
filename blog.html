@@ -115,9 +115,32 @@
         </div>
     </section>
 
+    <!-- Blog Search and Filter -->
+    <section class="blog-controls">
+        <div class="blog-controls__container container">
+            <div class="blog-search">
+                <div class="blog-search__wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="blog-search__icon">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="blog-search-input" class="blog-search__input" placeholder="Buscar artigos por título ou conteúdo...">
+                    <button id="blog-search-clear" class="blog-search__clear" style="display: none;" aria-label="Limpar busca">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <p class="blog-search__results" id="blog-search-results" style="display: none;"></p>
+            </div>
+        </div>
+    </section>
+
     <!-- Blog Articles -->
     <section class="blog-articles">
         <div class="blog-articles__container container">
+            <div id="blog-articles-wrapper">
 
             <!-- Article 1: Business Intelligence -->
             <article class="blog-article" id="bi-conceito">
@@ -1595,6 +1618,25 @@
                     </p>
                 </div>
             </article>
+
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="blog-pagination" id="blog-pagination">
+                <button class="blog-pagination__btn blog-pagination__btn--prev" id="pagination-prev" disabled>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    Anterior
+                </button>
+                <div class="blog-pagination__numbers" id="pagination-numbers"></div>
+                <button class="blog-pagination__btn blog-pagination__btn--next" id="pagination-next">
+                    Próximo
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
 
         </div>
     </section>

@@ -588,3 +588,414 @@ if (termsLink && termsModal && termsModalClose) {
         if (e.key === 'Escape' && termsModal.classList.contains('active')) closeModal();
     });
 }
+
+// ===== Blog Carousel =====
+const blogCarousel = document.querySelector('.blog-carousel');
+
+if (blogCarousel) {
+    const track = blogCarousel.querySelector('.blog-carousel__track');
+    const cards = Array.from(track.children);
+    const prevButton = blogCarousel.querySelector('.blog-carousel__nav--prev');
+    const nextButton = blogCarousel.querySelector('.blog-carousel__nav--next');
+    const indicatorsContainer = blogCarousel.querySelector('.blog-carousel__indicators');
+
+    let currentIndex = 0;
+    let cardsPerView = 1;
+    let autoPlayInterval;
+
+    // Calculate cards per view based on screen width
+    function updateCardsPerView() {
+        if (window.innerWidth >= 1024) {
+            cardsPerView = 3;
+        } else if (window.innerWidth >= 768) {
+            cardsPerView = 2;
+        } else {
+            cardsPerView = 1;
+        }
+    }
+
+    // Create indicators
+    function createIndicators() {
+        indicatorsContainer.innerHTML = '';
+        const maxIndex = cards.length - cardsPerView;
+        const totalSlides = maxIndex + 1;
+
+        for (let i = 0; i <= maxIndex; i++) {
+            const indicator = document.createElement('button');
+            indicator.classList.add('blog-carousel__indicator');
+            indicator.setAttribute('aria-label', `Ir para posição ${i + 1}`);
+            if (i === 0) indicator.classList.add('active');
+
+            indicator.addEventListener('click', () => {
+                goToSlide(i);
+            });
+
+            indicatorsContainer.appendChild(indicator);
+        }
+    }
+
+    // Update indicators
+    function updateIndicators() {
+        const indicators = Array.from(indicatorsContainer.children);
+        indicators.forEach((indicator, index) => {
+            indicator.classList.remove('active');
+            if (index === currentIndex) {
+                indicator.classList.add('active');
+            }
+        });
+    }
+
+    // Move to specific slide
+    function goToSlide(slideIndex) {
+        currentIndex = slideIndex;
+        updateCarousel();
+        resetAutoPlay();
+    }
+
+    // Update carousel position
+    function updateCarousel() {
+        const cardWidth = cards[0].offsetWidth;
+        const gap = 32; // 2rem = 32px
+        const offset = -(currentIndex * (cardWidth + gap));
+
+        track.style.transform = `translateX(${offset}px)`;
+
+        // Update buttons state
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex >= cards.length - cardsPerView;
+
+        // Update indicators
+        updateIndicators();
+    }
+
+    // Previous slide
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+            resetAutoPlay();
+        }
+    });
+
+    // Next slide
+    nextButton.addEventListener('click', () => {
+        const maxIndex = cards.length - cardsPerView;
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+            resetAutoPlay();
+        }
+    });
+
+    // Auto play
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(() => {
+            const maxIndex = cards.length - cardsPerView;
+            if (currentIndex >= maxIndex) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+            updateCarousel();
+        }, 5000); // Change slide every 5 seconds
+    }
+
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+
+    // Touch/Swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoPlay();
+    });
+
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        resetAutoPlay();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        const maxIndex = cards.length - cardsPerView;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0 && currentIndex < maxIndex) {
+                // Swipe left - next
+                currentIndex++;
+                updateCarousel();
+            } else if (diff < 0 && currentIndex > 0) {
+                // Swipe right - previous
+                currentIndex--;
+                updateCarousel();
+            }
+        }
+    }
+
+    // Pause auto play on hover
+    blogCarousel.addEventListener('mouseenter', stopAutoPlay);
+    blogCarousel.addEventListener('mouseleave', startAutoPlay);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        const maxIndex = cards.length - cardsPerView;
+        if (e.key === 'ArrowLeft' && currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+            resetAutoPlay();
+        } else if (e.key === 'ArrowRight' && currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+            resetAutoPlay();
+        }
+    });
+
+    // Handle window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            const oldCardsPerView = cardsPerView;
+            updateCardsPerView();
+
+            if (oldCardsPerView !== cardsPerView) {
+                currentIndex = 0;
+                createIndicators();
+                updateCarousel();
+            } else {
+                updateCarousel();
+            }
+        }, 250);
+    });
+
+    // Initialize
+    updateCardsPerView();
+    createIndicators();
+    updateCarousel();
+    startAutoPlay();
+}
+
+// ===== Blog Pagination and Search =====
+const blogArticlesWrapper = document.getElementById('blog-articles-wrapper');
+
+if (blogArticlesWrapper) {
+    const allArticles = Array.from(blogArticlesWrapper.querySelectorAll('.blog-article'));
+    const articlesPerPage = 3;
+    let currentPage = 1;
+    let filteredArticles = [...allArticles];
+
+    const paginationPrev = document.getElementById('pagination-prev');
+    const paginationNext = document.getElementById('pagination-next');
+    const paginationNumbers = document.getElementById('pagination-numbers');
+    const searchInput = document.getElementById('blog-search-input');
+    const searchClear = document.getElementById('blog-search-clear');
+    const searchResults = document.getElementById('blog-search-results');
+
+    // Show articles for current page
+    function showArticlesForPage(page) {
+        const startIndex = (page - 1) * articlesPerPage;
+        const endIndex = startIndex + articlesPerPage;
+
+        allArticles.forEach(article => {
+            article.style.display = 'none';
+        });
+
+        filteredArticles.slice(startIndex, endIndex).forEach(article => {
+            article.style.display = 'block';
+        });
+
+        // Update pagination controls
+        updatePaginationControls();
+
+        // Scroll to top of articles
+        const articlesSection = document.querySelector('.blog-articles');
+        if (articlesSection) {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const offset = articlesSection.offsetTop - headerHeight - 20;
+            window.scrollTo({
+                top: offset,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    // Update pagination controls
+    function updatePaginationControls() {
+        const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+
+        // Update buttons state
+        paginationPrev.disabled = currentPage === 1;
+        paginationNext.disabled = currentPage === totalPages || totalPages === 0;
+
+        // Create page numbers
+        paginationNumbers.innerHTML = '';
+
+        if (totalPages <= 1) {
+            document.getElementById('blog-pagination').style.display = 'none';
+            return;
+        }
+
+        document.getElementById('blog-pagination').style.display = 'flex';
+
+        for (let i = 1; i <= totalPages; i++) {
+            // Show first page, last page, current page, and pages around current
+            if (
+                i === 1 ||
+                i === totalPages ||
+                (i >= currentPage - 1 && i <= currentPage + 1)
+            ) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = 'blog-pagination__number';
+                pageBtn.textContent = i;
+
+                if (i === currentPage) {
+                    pageBtn.classList.add('active');
+                }
+
+                pageBtn.addEventListener('click', () => {
+                    currentPage = i;
+                    showArticlesForPage(currentPage);
+                });
+
+                paginationNumbers.appendChild(pageBtn);
+            } else if (
+                i === currentPage - 2 ||
+                i === currentPage + 2
+            ) {
+                // Add ellipsis
+                const ellipsis = document.createElement('span');
+                ellipsis.className = 'blog-pagination__ellipsis';
+                ellipsis.textContent = '...';
+                paginationNumbers.appendChild(ellipsis);
+            }
+        }
+    }
+
+    // Previous page
+    if (paginationPrev) {
+        paginationPrev.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                showArticlesForPage(currentPage);
+            }
+        });
+    }
+
+    // Next page
+    if (paginationNext) {
+        paginationNext.addEventListener('click', () => {
+            const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                showArticlesForPage(currentPage);
+            }
+        });
+    }
+
+    // Search functionality
+    if (searchInput) {
+        let searchTimeout;
+
+        searchInput.addEventListener('input', (e) => {
+            clearTimeout(searchTimeout);
+            const query = e.target.value.toLowerCase().trim();
+
+            // Show/hide clear button
+            if (query) {
+                searchClear.style.display = 'flex';
+            } else {
+                searchClear.style.display = 'none';
+            }
+
+            searchTimeout = setTimeout(() => {
+                performSearch(query);
+            }, 300);
+        });
+
+        // Clear search
+        searchClear.addEventListener('click', () => {
+            searchInput.value = '';
+            searchClear.style.display = 'none';
+            searchResults.style.display = 'none';
+            performSearch('');
+        });
+
+        // Search function
+        function performSearch(query) {
+            if (!query) {
+                // Reset to show all articles
+                filteredArticles = [...allArticles];
+                searchResults.style.display = 'none';
+            } else {
+                // Filter articles by query
+                filteredArticles = allArticles.filter(article => {
+                    const title = article.querySelector('.article__title')?.textContent.toLowerCase() || '';
+                    const content = article.querySelector('.article__content')?.textContent.toLowerCase() || '';
+
+                    return title.includes(query) || content.includes(query);
+                });
+
+                // Show search results message
+                searchResults.style.display = 'block';
+                if (filteredArticles.length === 0) {
+                    searchResults.textContent = 'Nenhum artigo encontrado para sua busca.';
+                    searchResults.classList.add('no-results');
+                } else {
+                    const plural = filteredArticles.length === 1 ? 'artigo encontrado' : 'artigos encontrados';
+                    searchResults.textContent = `${filteredArticles.length} ${plural}`;
+                    searchResults.classList.remove('no-results');
+                }
+            }
+
+            // Reset to first page
+            currentPage = 1;
+            showArticlesForPage(currentPage);
+        }
+    }
+
+    // Check for hash in URL and scroll to article
+    function checkURLHash() {
+        const hash = window.location.hash;
+        if (hash) {
+            const articleId = hash.substring(1);
+            const article = document.getElementById(articleId);
+
+            if (article) {
+                // Find which page this article is on
+                const articleIndex = filteredArticles.indexOf(article);
+                if (articleIndex !== -1) {
+                    const articlePage = Math.floor(articleIndex / articlesPerPage) + 1;
+                    currentPage = articlePage;
+                    showArticlesForPage(currentPage);
+
+                    // Scroll to article after a short delay
+                    setTimeout(() => {
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const offset = article.offsetTop - headerHeight - 20;
+                        window.scrollTo({
+                            top: offset,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+        }
+    }
+
+    // Initialize pagination
+    showArticlesForPage(1);
+    checkURLHash();
+
+    // Handle hash changes
+    window.addEventListener('hashchange', checkURLHash);
+}
